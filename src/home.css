@@ -48,6 +48,12 @@
   text-align: center;
   gap: 8px;
 }
+.googlelogin:hover{
+  background-color: lightgray;
+}
+.button1{
+  text-decoration: none;
+}
 .applelogin{
   gap: 5px;
   background-color: white;
@@ -60,6 +66,9 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+.applelogin:hover{
+  background-color: lightgray;
 }
 .google{
   text-decoration: none;
