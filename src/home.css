@@ -46,9 +46,10 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  gap: 8px;
 }
 .applelogin{
-  
+  gap: 5px;
   background-color: white;
   width: 300px;
   border-radius:25px;
