@@ -24,7 +24,7 @@
   position: absolute;
   left: 30vw;
   align-items: center;
-  top: 20%;
+  top: 10%;
 }
 .loginoptions{
   position: relative;
@@ -51,7 +51,22 @@
 .googlelogin:hover{
   background-color: lightgray;
 }
+.login{
+  background-color: black;
+  width: 300px;
+  border-radius:25px;
+  height: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 0.3px solid white;
+}
 .button1{
+  text-decoration: none;
+}
+.button2{
   text-decoration: none;
 }
 .applelogin{
@@ -72,8 +87,67 @@
 }
 .google{
   text-decoration: none;
-  font-size: 12px;
+  font-size: 15px;
   color: black;
   text-align: center;
   justify-content: center;
+}
+.logintext{
+  text-decoration: none;
+  font-size: 15px;
+  color: #1C97EA;
+  text-align: center;
+  justify-content: center;
+}
+.createaccount{
+  background-color: #1C97EA;
+  width: 300px;
+  border-radius:25px;
+  height: 50px;
+  margin-top: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.createaccount:hover{
+  background-color: #369adc;
+}
+.createaccounttext{
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  justify-content: center;
+}
+.ortext{
+  font-size: 15px;
+  font-weight: 400;
+  color: white;
+  margin-top: 10px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.consent{
+  font-size: 10px;
+  color: white;
+  justify-content: center;
+  text-align: start;
+  margin-top: 10px;
+  font-weight: 400
+}
+.accountcreated{
+  font-size: 20px;
+  color: white;
+  justify-content: center;
+  text-align: start;
+  margin-top: 15px;
+  font-weight: bolder
+}
+.terms{
+  color:#1C97EA;
+  text-decoration: none;
 }
