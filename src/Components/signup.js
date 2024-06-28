@@ -1,9 +1,45 @@
 import React , { useEffect } from 'react'
 import {Link} from 'react-router-dom'
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 export default function Signup() {
   useEffect(() => {
     document.title = "Sign Up for WingedWords";
   }, []);
+  const signupfunction = () => {
+    var email = document.querySelector('#email').value
+    var password = document.querySelector('#password').value
+    const firebaseConfig = {
+      apiKey: "AIzaSyDZ_ktB0uBgEPdU1tfaUfxWJ3sTqgEMmvs",
+      authDomain: "wingedwordsadmin.firebaseapp.com",
+      databaseURL: "https://wingedwordsadmin-default-rtdb.firebaseio.com",
+      projectId: "wingedwordsadmin",
+      storageBucket: "wingedwordsadmin.appspot.com",
+      messagingSenderId: "386908666811",
+      appId: "1:386908666811:web:a979774edcac6706c1229e",
+      measurementId: "G-38QRTWBK7L"
+    };
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth();
+    if(email!=null && password!=null){
+      createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log('created')
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage)
+        // ..
+      });
+    }
+
+  }
   return (
     <div className="container">
       <div className="loginpage">
@@ -30,17 +66,17 @@ export default function Signup() {
           <input type="text" placeholder="Name" className='nameinput' />
           </div>
           <div className="button2">
-          <input type="text" placeholder="Email Address" className='nameinput' />
+          <input type="text" placeholder="Email Address" className='nameinput' id='email' />
           </div>
           <div className="button1">
-          <input type="password" placeholder="Password" className='nameinput' />
+          <input type="password" placeholder="Password" className='nameinput' id='password' />
           </div>
           <br/>
-          <a href="/" className="button1">
-            <div className="createaccountbtn">
-              <a href="/" className="createaccounttext">Create account</a>
+          <div className="button1" onClick={signupfunction}>
+            <div className="createaccountbtn" onClick={signupfunction}>
+              <Link className="createaccounttext" >Sign In</Link>
             </div>
-          </a>
+          </div>
         </div>
       </div>
     </div>
