@@ -32,24 +32,12 @@ export default function signup() {
           <div className="button1">
           <input type="password" placeholder="Password" className='nameinput' />
           </div>
-          {/* <div className="consent">
-            By signing up, you agree to the <a href="/" className="terms">Terms of Service</a> and <a href="/" className="terms">Privacy Policy</a>,<br></br>including <a href="/" className="terms">Cookie Use</a>.
-          </div> */}
           <br/>
           <a href="/" className="button1">
             <div className="createaccountbtn">
               <a href="/" className="createaccounttext">Create account</a>
             </div>
           </a>
-          {/* <div className="accountcreated">
-            Already have an account?
-          </div>
-          <br></br>
-          <a href="" className="button1">
-            <div className="login">
-              <a href="/" className="logintext">Sign in</a>
-            </div>
-          </a> */}
         </div>
       </div>
     </div>
