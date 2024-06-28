@@ -173,3 +173,47 @@
   position: relative;
   margin-top: 10px;;
 }
+.options{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  height: 100vh;
+  /* background-color: green; */
+  width: 270px;
+  /* border: 1px grey solid; */
+}
+.optionnames{
+  padding-left: 80px;
+  margin-top: 10px;
+}
+.homeicon{
+  
+  width: 180px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: 35px;
+  border-radius: 20px;
+  font-size: 20px;
+  color: white;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  font-weight: bolder;
+  gap: 20px;
+}
+.homelogo{
+  padding-left: 10px;
+}
+.homeicon:hover{
+  background-color: #171B21;
+}
+.hometitle{
+  margin-top: 2px;
+}
+.othertitles{
+  margin-top: 2px;
+  font-weight: 500;
+}

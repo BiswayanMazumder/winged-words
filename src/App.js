@@ -1,3 +1,4 @@
+import Home from './Components/Home';
 import Login from './Components/login';
 import Loginpage from './Components/loginpage';
 import Signup from './Components/signup';
@@ -21,6 +22,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/login' element={<Login/>}/>
+      </Routes>
+      <Routes>
+        <Route path='/home' element={<Home/>}/>
       </Routes>
     </BrowserRouter>
   )

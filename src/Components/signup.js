@@ -29,7 +29,7 @@ export default function Signup() {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        console.log('created')
+        window.location.href="/home"
         // ...
       })
       .catch((error) => {

@@ -29,7 +29,8 @@ export default function Login() {
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
-        console.log('loggedin')
+        // console.log('loggedin')
+        window.location.href="/home"
         // ...
       })
       .catch((error) => {
