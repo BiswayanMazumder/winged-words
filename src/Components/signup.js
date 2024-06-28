@@ -1,8 +1,9 @@
-import React from 'react'
-export default function signup() {
-    const applelogin = () => {
-        console.log('apple')
-    }
+import React , { useEffect } from 'react'
+
+export default function Signup() {
+  useEffect(() => {
+    document.title = "Sign Up for WingedWords";
+  }, []);
   return (
     <div className="container">
       <div className="loginpage">
