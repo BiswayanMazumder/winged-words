@@ -6,7 +6,7 @@ import { getAnalytics } from "firebase/analytics";
 import { GoogleAuthProvider } from "firebase/auth";
 export default function Home() {
     useEffect(() => {
-        document.title = "Home /WingedWords";
+        document.title = "Home";
     }, []);
 
     return (
