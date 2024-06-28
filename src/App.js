@@ -1,10 +1,20 @@
 import Loginpage from './Components/loginpage';
 import './home.css';
-// import './home.js';
+import * as ReactDOM from "react-dom/client";
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from 'react-router-dom';
+
 function App() {
   return (
-    <Loginpage/>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Loginpage />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App;
