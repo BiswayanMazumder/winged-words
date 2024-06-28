@@ -38,11 +38,11 @@ export default function Loginpage() {
             </div>
           </a>
           <div className="ortext">or</div>
-          <a href="/" className="button1">
+          <Link to="/signup" className="button1">
             <div className="createaccount">
               <Link to="/signup" className="createaccounttext">Create account</Link>
             </div>
-          </a>
+          </Link>
           <div className="consent">
             By signing up, you agree to the <a href="/" className="terms">Terms of Service</a> and <a href="/" className="terms">Privacy Policy</a>,<br></br>including <a href="/" className="terms">Cookie Use</a>.
           </div>
@@ -50,11 +50,11 @@ export default function Loginpage() {
             Already have an account?
           </div>
           <br></br>
-          <a href="" className="button1">
+          <Link to="/login" className="button1">
             <div className="login">
               <Link to="/login" className="logintext">Sign in</Link>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
