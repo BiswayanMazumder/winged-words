@@ -1,4 +1,6 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+// import Signup from './Components/signup';
 export default function Loginpage() {
     const applelogin = () => {
         console.log('apple')
@@ -38,7 +40,7 @@ export default function Loginpage() {
           <div className="ortext">or</div>
           <a href="/" className="button1">
             <div className="createaccount">
-              <a href="/" className="createaccounttext">Create account</a>
+              <Link to="/signup" className="createaccounttext">Create account</Link>
             </div>
           </a>
           <div className="consent">
