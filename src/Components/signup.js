@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { GoogleAuthProvider } from "firebase/auth";
 export default function Signup() {
   useEffect(() => {
     document.title = "Sign Up for WingedWords";
