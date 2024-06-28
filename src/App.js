@@ -1,3 +1,4 @@
+import Login from './Components/login';
 import Loginpage from './Components/loginpage';
 import Signup from './Components/signup';
 import './home.css';
@@ -17,6 +18,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/signup' element={<Signup/>}/>
+      </Routes>
+      <Routes>
+        <Route path='/login' element={<Login/>}/>
       </Routes>
     </BrowserRouter>
   )

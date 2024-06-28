@@ -52,7 +52,7 @@ export default function Loginpage() {
           <br></br>
           <a href="" className="button1">
             <div className="login">
-              <a href="/" className="logintext">Sign in</a>
+              <Link to="/login" className="logintext">Sign in</Link>
             </div>
           </a>
         </div>
