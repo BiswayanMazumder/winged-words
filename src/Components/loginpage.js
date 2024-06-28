@@ -1,10 +1,13 @@
-import React from 'react'
+import React , { useEffect } from 'react'
 import {Link} from 'react-router-dom'
 // import Signup from './Components/signup';
 export default function Loginpage() {
     const applelogin = () => {
         console.log('apple')
     }
+    useEffect(() => {
+      document.title = "WingedWords. It’s what’s happening / WingedWords";
+    }, []);
   return (
     <div className="container">
       <div className="loginpage">
