@@ -11,21 +11,17 @@ import {
     Routes,
     Route
 } from 'react-router-dom';
-import Followingpage from './followingpage';
 import FollowingpageUI from '../followingpageUI';
-export default function Home() {
+export default function Followingpage() {
     useEffect(() => {
-        document.title = "Home";
+        document.title = "Following - WingedWords";
     }, []);
 
     return (
         <>
             <div className="homebody">
                 <Navbar />
-                <Posts />
-                <Routes>
-                    <Route path='/following' element={<FollowingpageUI />} />
-                </Routes>
+                <FollowingpageUI />
             </div>
         </>
     )

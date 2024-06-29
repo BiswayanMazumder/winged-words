@@ -1,7 +1,9 @@
 import Home from './Components/Home';
+import Followingpage from './Components/followingpage';
 import Login from './Components/login';
 import Loginpage from './Components/loginpage';
 import Signup from './Components/signup';
+import FollowingpageUI from './followingpageUI';
 import './home.css';
 import * as ReactDOM from "react-dom/client";
 import {
@@ -25,6 +27,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/home' element={<Home/>}/>
+      </Routes>
+      <Routes>
+        <Route path='/following' element={<Followingpage/>}/>
       </Routes>
     </BrowserRouter>
   )

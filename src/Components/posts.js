@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Posts() {
   const selectedTab = (tab) => {
     console.log(tab);
-  }
+  };
 
   return (
     <>
@@ -13,10 +14,9 @@ export default function Posts() {
             For you
             <div className="headingselected"></div>
           </div>
-          <div className="following" onClick={() => selectedTab('Following')}>
+          <Link to="/following" className="following" onClick={() => selectedTab('Following')}>
             Following
-            
-          </div>
+          </Link>
         </div>
         <div className="divider"></div>
       </div>

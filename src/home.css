@@ -327,6 +327,7 @@
   height: 40px;
   font-weight: 500;
   color: grey;
+  text-decoration: none;
 }
 .headingselected{
   display: flex;
