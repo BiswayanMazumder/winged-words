@@ -175,12 +175,12 @@
 }
 .options{
   display: flex;
-  flex-direction: column;
+  position: relative;
+  flex-direction: row;
   margin-top: 10px;
   height: 100vh;
-  /* background-color: green; */
   width: 270px;
-  /* border: 1px grey solid; */
+  flex-wrap: wrap;
 }
 .optionnames{
   padding-left: 80px;
@@ -216,4 +216,49 @@
 .othertitles{
   margin-top: 2px;
   font-weight: 500;
+}
+@media screen and (min-width:500px) and (max-width:1000px){
+  .hometitle, .othertitles{
+    display: none;
+  }
+}
+@media screen and (min-width:500px) and (max-width:1000px){
+  .optionnames{
+    padding-left: 10%;
+  }
+}
+.postbutton{
+  background-color: #1C97EA;
+  width: 200px;
+  border-radius:25px;
+  height: 50px;
+  margin-top: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.postbuttontab{
+  background-color: #1C97EA;
+  width: 55px;
+  border-radius:25px;
+  height: 55px;
+  margin-top: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
+}
+@media screen and (min-width:500px) and (max-width:1000px){
+  .postbutton{
+    display: none;
+  }
+}
+@media screen and (min-width:500px) and (max-width:1000px){
+  .postbuttontab{
+    display: flex;
+  }
 }

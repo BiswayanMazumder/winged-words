@@ -20,7 +20,7 @@ export default function Loginpage() {
       appId: "1:386908666811:web:a979774edcac6706c1229e",
       measurementId: "G-38QRTWBK7L"
     };
-    
+
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
