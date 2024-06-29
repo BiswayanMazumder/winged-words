@@ -262,3 +262,11 @@
     display: flex;
   }
 }
+.postbuttontext{
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  font-weight: bold;
+}

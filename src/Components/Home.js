@@ -59,7 +59,7 @@ export default function Home() {
                         </div>
                         <div  className="button1">
                             <div className="postbutton">
-                                <div className="createaccounttext">Post</div>
+                                <div className="postbuttontext">Post</div>
                             </div>
                         </div>
                         <div  className="button1">
