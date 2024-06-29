@@ -179,8 +179,10 @@
   flex-direction: row;
   margin-top: 10px;
   height: 100vh;
-  width: 270px;
+  width: 300px;
   flex-wrap: wrap;
+  /* background-color: red; */
+  overflow: hidden;
 }
 .optionnames{
   padding-left: 80px;
@@ -231,7 +233,7 @@
 }
 .postbutton{
   background-color: #1C97EA;
-  width: 200px;
+  width: 180px;
   border-radius:25px;
   height: 50px;
   margin-top: 20px;
@@ -328,6 +330,7 @@
   font-weight: 500;
   color: grey;
   text-decoration: none;
+  /* background-color:red */
 }
 .headingselected{
   display: flex;
@@ -336,4 +339,26 @@
   top: 15px;
   border-radius: 20px;
   background-color: rgb(29, 155, 240);
+}
+.profilepicture{
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  font-weight: bold;
+  gap: 20px;
+  font-size: 15px;
+}
+.profiledp{
+  border-radius: 50%;
+}
+.profilepicturetext{
+  position: relative;
+  top: 10px;
+  display: flex;
+}
+@media screen and (min-width:500px) and (max-width:1000px){
+  .profilepicturetext{
+    display: none;
+  }
 }
