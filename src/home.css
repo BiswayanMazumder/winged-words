@@ -225,6 +225,8 @@
 @media screen and (min-width:500px) and (max-width:1000px){
   .optionnames{
     padding-left: 10%;
+    width: 80px;
+    /* background-color: green; */
   }
 }
 .postbutton{
@@ -269,4 +271,68 @@
   text-align: center;
   justify-content: center;
   font-weight: bold;
+}
+.posts{
+  margin-left: 110px;
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  position: relative;
+  align-items: start;
+  justify-content: start;
+  border-left: 0.3px solid grey;
+  border-right: 0.3px solid grey;
+  border-bottom: 0.3px solid grey;
+  /* padding-left: 20px; */
+  text-align: start;
+  /* background-color: #171B21; */
+}
+@media screen and (min-width:500px) and (max-width:1000px){
+  .posts{
+    margin-left: -120px;
+    width: 70%;
+    position: relative;
+  }
+}
+.homebody{
+  display: flex;
+  flex-direction: row;
+}
+.tablist{
+  position: absolute;
+  height: 80px;
+  width:100%;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: row;
+  padding-top: 40px;
+  justify-content: space-around;
+  text-align: space-between;
+  color: white;
+}
+.divider{
+  position: relative;
+  width: 100%;
+  height: 0.5px;
+  top: 80px;
+  background-color: grey;
+}
+.foryou{
+  font-weight: bolder;
+  height: 40px;
+}
+.following{
+  height: 40px;
+  font-weight: 500;
+  color: grey;
+}
+.headingselected{
+  display: flex;
+  height: 4px;
+  position: relative;
+  top: 15px;
+  border-radius: 20px;
+  background-color: rgb(29, 155, 240);
 }

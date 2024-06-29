@@ -5,6 +5,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { GoogleAuthProvider } from "firebase/auth";
 import Navbar from './navbar';
+import Posts from './posts';
 export default function Home() {
     useEffect(() => {
         document.title = "Home";
@@ -12,9 +13,9 @@ export default function Home() {
 
     return (
         <>
-            <div className="container">
+            <div className="homebody">
             <Navbar/>
-
+            <Posts/>
             </div>
         </>
     )
