@@ -14,6 +14,7 @@ import {
 import Followingpage from './followingpage';
 import FollowingpageUI from '../followingpageUI';
 import Homepagethirdsection from './homepagethirdsection';
+import Floatingpostbutton from './floatingpostbutton';
 export default function Home() {
     useEffect(() => {
         document.title = "Home";
@@ -28,6 +29,7 @@ export default function Home() {
                     <Route path='/following' element={<FollowingpageUI />} />
                 </Routes>
                 <Homepagethirdsection/>
+                <Floatingpostbutton/>
             </div>
         </>
     )

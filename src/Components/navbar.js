@@ -1,4 +1,5 @@
 import React from 'react'
+import Floatingpostbutton from './floatingpostbutton'
 
 export default function Navbar() {
     return (
@@ -60,7 +61,7 @@ export default function Navbar() {
                             </div>
                         </div>
                     </div>
-
+                    
                 </div>
             </div>
         </>
