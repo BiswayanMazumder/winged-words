@@ -307,13 +307,30 @@
   text-align: start;
   /* background-color: #171B21; */
 }
+.logomobile{
+  display: none;
+}
+
+@media screen and (max-width:500px){
+  .logomobile{
+    /* border: none; */
+    /* width: 100vw; */
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border: none;
+    justify-content: center;
+  }
+}
 @media screen and (max-width:500px){
   .posts{
     /* border: none; */
     /* width: 100vw; */
+    top: 10px;
     position: relative;
     width: 100%;
-    margin-left: -141px;
+    margin-left: -145px;
     border: none;
   }
 }
@@ -340,6 +357,13 @@
   text-align: space-between;
   color: white;
 }
+@media screen and (max-width:500px){
+  .tablist{
+    /* border: none; */
+    /* width: 100vw; */
+    top: 32px;
+  }
+}
 .divider{
   position: relative;
   width: 100%;
@@ -347,11 +371,7 @@
   top: 80px;
   background-color: grey;
 }
-@media screen and (max-width:500px){
-  .divider{
-    display: none;
-  }
-}
+
 .foryou{
   font-weight: bolder;
   height: 40px;
