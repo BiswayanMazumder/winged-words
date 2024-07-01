@@ -13,6 +13,7 @@ import {
 } from 'react-router-dom';
 import Followingpage from './followingpage';
 import FollowingpageUI from '../followingpageUI';
+import Homepagethirdsection from './homepagethirdsection';
 export default function Home() {
     useEffect(() => {
         document.title = "Home";
@@ -26,6 +27,7 @@ export default function Home() {
                 <Routes>
                     <Route path='/following' element={<FollowingpageUI />} />
                 </Routes>
+                <Homepagethirdsection/>
             </div>
         </>
     )

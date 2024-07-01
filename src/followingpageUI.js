@@ -20,6 +20,7 @@ export default function FollowingpageUI() {
             </div>
             <div className="divider"></div>
           </div>
+          <FollowingpageUI/>
         </>
       );
 }
