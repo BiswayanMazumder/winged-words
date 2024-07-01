@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Navbar from './Components/navbar';
+import Homepagethirdsection from './Components/homepagethirdsection';
 export default function FollowingpageUI() {
     const selectedTab = (tab) => {
         console.log(tab);
@@ -20,7 +21,7 @@ export default function FollowingpageUI() {
             </div>
             <div className="divider"></div>
           </div>
-          
+          <Homepagethirdsection />
         </>
       );
 }
