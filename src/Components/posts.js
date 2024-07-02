@@ -37,16 +37,29 @@ export default function Posts() {
             if (docSnap.exists()) {
               const tweetids = docSnap.data().TIDs;
               // console.log("Document data:", tweetids);
-
               const tweetData = await Promise.all(tweetids.map(async (tweetId) => {
                 const tweetDocRef = doc(db, "Global Tweets", tweetId);
                 const tweetDocSnap = await getDoc(tweetDocRef);
                 if (tweetDocSnap.exists()) {
+                  const uploadedUid = tweetDocSnap.data()["Uploaded UID"];
+                  const userDetailsDocRef = doc(db, "User Details", uploadedUid);
+                  const userDetailsDocSnap = await getDoc(userDetailsDocRef);
+
+                  let name = "Unknown";
+                  let profilePic = "";
+
+                  if (userDetailsDocSnap.exists()) {
+                    name = userDetailsDocSnap.data()["Name"];
+                    profilePic = userDetailsDocSnap.data()["Profile Pic"];
+                  }
+
                   return {
                     id: tweetId,
                     body: tweetDocSnap.data()["Tweet Message"],
                     imageUrl: tweetDocSnap.data()["Image URL"],
-                    owner: tweetDocSnap.data()["Uploaded UID"]
+                    owner: uploadedUid,
+                    name: name,
+                    profilePic: profilePic,
                   };
                 } else {
                   console.log("No such document!");
@@ -95,7 +108,9 @@ export default function Posts() {
             <div key={tweet.id} className="tweet">
               <div className="userdetails">
                 <div className="profilepics">
-
+                <div className="ownername">
+                <p>{tweet.name}</p>
+                </div>
                 </div>
               </div>
               <p>{tweet.body}</p>

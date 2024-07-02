@@ -523,3 +523,12 @@
   border-radius: 50%;
   background-color: aliceblue;
 }
+.ownername{
+  position: relative;
+  left: 50px;
+  width: 300%;
+  /* background-color: white; */
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+}
