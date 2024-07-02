@@ -330,7 +330,7 @@
   justify-content: start;
   border-left: 0.3px solid grey;
   border-right: 0.3px solid grey;
-  /* border-bottom: 0.3px solid grey; */
+  border-bottom: 0.3px solid grey;
   /* padding-left: 20px; */
   text-align: start;
   /* background-color: #171B21; */
@@ -508,7 +508,7 @@
   padding-right: 10px;
   padding-left: 10px;
 }
-.tweets img{
+.tweetimages{
   height: auto;
   width: 100%;
   position: relative;
@@ -522,7 +522,7 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
 }
 .ownername{
   position: relative;
@@ -530,7 +530,13 @@
   width:70vw;
   /* background-color: green; */
   display: flex;
-  top: 10px;
+  top:-35px;
   flex-direction: column;
   font-weight: 700;
+}
+.profileimage{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: aliceblue;
 }
