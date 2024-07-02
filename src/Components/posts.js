@@ -1,7 +1,71 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getAuth, onAuthStateChanged, GoogleAuthProvider } from "firebase/auth";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 export default function Posts() {
+  const [tweets, setTweets] = useState([]);
+
+  useEffect(() => {
+    const fetchtweets = async () => {
+      const firebaseConfig = {
+        apiKey: "AIzaSyDZ_ktB0uBgEPdU1tfaUfxWJ3sTqgEMmvs",
+        authDomain: "wingedwordsadmin.firebaseapp.com",
+        databaseURL: "https://wingedwordsadmin-default-rtdb.firebaseio.com",
+        projectId: "wingedwordsadmin",
+        storageBucket: "wingedwordsadmin.appspot.com",
+        messagingSenderId: "386908666811",
+        appId: "1:386908666811:web:a979774edcac6706c1229e",
+        measurementId: "G-38QRTWBK7L"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      const analytics = getAnalytics(app);
+      const auth = getAuth();
+      const provider = new GoogleAuthProvider();
+
+      onAuthStateChanged(auth, async (user) => {
+        if (user) {
+          const uid = user.uid;
+          try {
+            const userDocRef = doc(db, "Global Tweet IDs", "TIDs");
+            const docSnap = await getDoc(userDocRef);
+            if (docSnap.exists()) {
+              const tweetids = docSnap.data().TIDs;
+              console.log("Document data:", tweetids);
+
+              const tweetData = await Promise.all(tweetids.map(async (tweetId) => {
+                const tweetDocRef = doc(db, "Global Tweets", tweetId);
+                const tweetDocSnap = await getDoc(tweetDocRef);
+                if (tweetDocSnap.exists()) {
+                  return {
+                    id: tweetId,
+                    body: tweetDocSnap.data()["Tweet Message"],
+                    imageUrl: tweetDocSnap.data()["Image URL"],
+                    owner: tweetDocSnap.data()["Uploaded UID"]
+                  };
+                } else {
+                  console.log("No such document!");
+                  return null;
+                }
+              }));
+
+              setTweets(tweetData.filter(tweet => tweet !== null));
+            }
+          } catch (e) {
+            console.log(e.message);
+          }
+        }
+      });
+    };
+
+    fetchtweets();
+  }, []);
+
   const selectedTab = (tab) => {
     console.log(tab);
   };
@@ -26,6 +90,20 @@ export default function Posts() {
           </Link>
         </div>
         <div className="divider"></div>
+        <div className="tweets">
+          {tweets.map((tweet) => (
+            <div key={tweet.id} className="tweet">
+              <div className="userdetails">
+                <div className="profilepics">
+
+                </div>
+              </div>
+              <p>{tweet.body}</p>
+              <br></br>
+              {tweet.imageUrl && <img src={tweet.imageUrl} alt="Tweet Image" />}
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
