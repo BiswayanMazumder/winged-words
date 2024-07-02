@@ -36,7 +36,7 @@ export default function Posts() {
             const docSnap = await getDoc(userDocRef);
             if (docSnap.exists()) {
               const tweetids = docSnap.data().TIDs;
-              console.log("Document data:", tweetids);
+              // console.log("Document data:", tweetids);
 
               const tweetData = await Promise.all(tweetids.map(async (tweetId) => {
                 const tweetDocRef = doc(db, "Global Tweets", tweetId);
