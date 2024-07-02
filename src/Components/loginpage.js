@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider,onAuthStateChanged } from "firebase/auth";
 // import Signup from './Components/signup';
 export default function Loginpage() {
   useEffect(() => {
@@ -46,8 +46,41 @@ export default function Loginpage() {
         // ...
       });
   }
+  const getusers = () => {
+    const firebaseConfig = {
+      apiKey: "AIzaSyDZ_ktB0uBgEPdU1tfaUfxWJ3sTqgEMmvs",
+      authDomain: "wingedwordsadmin.firebaseapp.com",
+      databaseURL: "https://wingedwordsadmin-default-rtdb.firebaseio.com",
+      projectId: "wingedwordsadmin",
+      storageBucket: "wingedwordsadmin.appspot.com",
+      messagingSenderId: "386908666811",
+      appId: "1:386908666811:web:a979774edcac6706c1229e",
+      measurementId: "G-38QRTWBK7L"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth();
+    const provider = new GoogleAuthProvider();
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          const uid = user.uid;
+          // isloggedin = true;
+          console.log('signed in')
+          window.location.replace("/home")
+          // ...
+        } else {
+          // User is signed out
+          // ...
+          console.log('signed out')
+          
+        }
+      });
+    
+  }
   return (
-    <div className="container">
+    <div className="container" onLoad={getusers()}>
       <div className="loginpage">
         <div className="logo">
           <svg viewBox="0 0 24 24" width="150" height="150" aria-hidden="true" className="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-1nao33i r-rxcuwo r-1777fci r-m327ed r-494qqr">

@@ -113,10 +113,30 @@ export default function Posts() {
   const selectedTab = (tab) => {
     console.log(tab);
   };
-
+  const getusers = () => {
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const provider = new GoogleAuthProvider();
+      const auth = getAuth();
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          const uid = user.uid;
+          // isloggedin = true;
+          console.log('signed in')
+          //   window.location.replace("loggedinpage.html")
+          // ...
+        } else {
+          // User is signed out
+          // ...
+          console.log('signed out')
+          window.location.replace("/")
+        }
+      });
+    
+  }
   return (
     <>
-      <div className="posts">
+      <div className="posts" onLoad={getusers()}>
         <div className="logomobile">
           <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" className="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-1nao33i r-rxcuwo r-1777fci r-m327ed r-494qqr">
             <g>
