@@ -445,7 +445,7 @@
   right: 10px;
   top: 10px;
   height: 40px;
-  width: 240px;
+  width: 290px;
   border-radius: 20px;
   color: white;
   padding-left: 10px;
@@ -470,4 +470,25 @@
   .postbuttontabmobile{
     display: flex;
   }
+}
+.susbcribe{
+  display: flex;
+  padding-top: 10px;
+  flex-direction: column;
+  height: 180px;
+  width: 290px;
+  /* background-color: white; */
+  position: relative;
+  left: 10px;
+  right: 10px;
+  top: 30px;
+  border-radius: 10px;
+  border: 1px solid grey;
+  color: white;
+  justify-content: start;
+  align-items: start;
+  /* font-weight: bolder; */
+  font-size: 15px;
+  padding-left: 10px;
+  text-align: start;
 }
