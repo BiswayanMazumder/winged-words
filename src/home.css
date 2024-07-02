@@ -213,7 +213,7 @@
   }
 }
 .homeicon{
-  
+  text-decoration: none;
   width: 180px;
   padding-left: 10px;
   padding-top: 5px;
@@ -240,6 +240,7 @@
   margin-top: 2px;
 }
 .othertitles{
+  text-decoration: none;
   margin-top: 2px;
   font-weight: 500;
 }

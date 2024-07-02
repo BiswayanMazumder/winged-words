@@ -34,6 +34,7 @@ export default function Loginpage() {
         // The signed-in user info.
         const user = result.user;
         // IdP data available using getAdditionalUserInfo(result)
+        window.location.href="/home"
         // ...
       }).catch((error) => {
         // Handle Errors here.

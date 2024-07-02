@@ -1,4 +1,5 @@
 import Home from './Components/Home';
+import Account from './Components/account';
 import Followingpage from './Components/followingpage';
 import Login from './Components/login';
 import Loginpage from './Components/loginpage';
@@ -30,6 +31,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/following' element={<Followingpage/>}/>
+      </Routes>
+      <Routes>
+        <Route path='/account' element={<Account/>}/>
       </Routes>
     </BrowserRouter>
   )
