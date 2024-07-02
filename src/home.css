@@ -322,7 +322,8 @@
   width: 50%;
   display: flex;
   flex-direction: column;
-  overflow:scroll;
+  overflow-y:scroll;
+  overflow-x: hidden;
   /* flex-wrap: wrap; */
   position: relative;
   align-items: start;
@@ -526,9 +527,10 @@
 .ownername{
   position: relative;
   left: 50px;
-  width: 300%;
-  /* background-color: white; */
+  width:70vw;
+  /* background-color: green; */
   display: flex;
+  top: 10px;
   flex-direction: column;
   font-weight: 700;
 }
