@@ -502,7 +502,7 @@
 .tweets{
   font-size: 15px;
   position: relative;
-  top: 120px;
+  top: 70px;
   /* font-weight: bolder; */
   color: white;
   text-align: justify;
@@ -564,4 +564,11 @@
   width: 100px;
   
   border-radius: 50%;
+}
+.username{
+  color: white;
+  position: relative;
+  top: 50px;
+  left: 10px;
+  font-weight: bolder;
 }

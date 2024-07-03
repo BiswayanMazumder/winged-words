@@ -7,6 +7,7 @@ import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { useInView } from 'react-intersection-observer';
 
 export default function AccountTweets() {
+  const [name, setname] = useState('');
   const [tweets, setTweets] = useState([]);
   const [users, setUsers] = useState({});
   const [lastVisible, setLastVisible] = useState(null);
@@ -57,6 +58,7 @@ export default function AccountTweets() {
       const userDetailsDocRef = doc(db, "User Details", userId);
       const userDetailsDocSnap = await getDoc(userDetailsDocRef);
       if (userDetailsDocSnap.exists()) {
+        setname(userDetailsDocSnap.data()["Name"])
         return {
           id: userId,
           name: userDetailsDocSnap.data()["Name"],
@@ -175,7 +177,7 @@ export default function AccountTweets() {
           setcoverpic(docSnap.data()["Cover Picture"])
           console.log("Cover Picture: ", coverpic);
         }
-        
+
       }
     })
   }
@@ -206,7 +208,7 @@ export default function AccountTweets() {
           setprofilepic(docSnap.data()["Profile Pic"])
           console.log("profile Picture: ", profilepic);
         }
-        
+
       }
     })
   }
@@ -225,6 +227,9 @@ export default function AccountTweets() {
         </div>
         <div className="profilepic">
           <img src={profilepic} alt="" />
+        </div>
+        <div className="username">
+          <p>{name}</p>
         </div>
         <div className="tweets">
           {tweets.map((tweet, index) => (
