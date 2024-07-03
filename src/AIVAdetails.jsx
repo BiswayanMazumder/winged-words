@@ -15,7 +15,7 @@ export default function AIVAdetails() {
                 </div>
                 <div className="aivadetails">
                     <div className="aivasubs">
-                        <div className="postbuttontext">Post</div>
+                        <div className="postbuttontext">SUbscribe Now</div>
                     </div>
                 </div>
             </div>
