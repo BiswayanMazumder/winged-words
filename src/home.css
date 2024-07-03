@@ -541,3 +541,27 @@
   border-radius: 50%;
   background-color: aliceblue;
 }
+.coverpicture{
+  position: relative;
+  top: 20px;
+  width: 100%;
+}
+.coverpicture img{
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  height:250px;
+}
+.profilepic{
+  height: 100px;
+  width: 100px;
+  z-index: 2;
+  margin-left: 20px;
+  border-radius: 50%;
+}
+.profilepic img{
+  height: 100px;
+  width: 100px;
+  
+  border-radius: 50%;
+}
