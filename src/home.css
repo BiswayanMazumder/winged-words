@@ -543,7 +543,7 @@
 }
 .coverpicture{
   position: relative;
-  top: 20px;
+  top: 70px;
   width: 100%;
 }
 .coverpicture img{
@@ -571,4 +571,35 @@
   top: 50px;
   left: 10px;
   font-weight: bolder;
+}
+.nav{
+  background-color: black;
+  height: 70px;
+  width: 50%;
+  display: flex;
+  position: fixed;
+  z-index: 999;
+  flex-direction: row;
+  color: white;
+
+  font-weight: bolder;
+}
+@media screen and (max-width:1000px){
+  .nav{
+    display: none;
+  }
+}
+@media screen and (max-width:1000px){
+  .coverpicture{
+    top: 20px;
+  }
+}
+.backbutton{
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.navusername{
+  position: relative;
+  top: 22px;
+  left: 10px;
 }
