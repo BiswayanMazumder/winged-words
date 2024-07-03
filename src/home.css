@@ -597,11 +597,11 @@
 }
 .backbutton{
   margin-left: 20px;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 .navusername{
   position: relative;
-  top: 22px;
+  top: 15px;
   left: 10px;
 }
 .logoutbutton{
@@ -615,4 +615,59 @@
   margin-top: 20px;
   text-align: center;
   width: 180px;
+}
+.postscount{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  font-weight: 300;
+  font-size: 15px;
+  top: 40px;
+  align-items: start;
+  justify-content: start;
+  text-align: start;
+}
+.videoplayer video{
+  overflow: auto;
+  position: relative;
+  max-width: 100%;
+  max-height: 500px;
+  /* align-self: center; */
+  width: 100%;
+}
+.videoplayer{
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  align-self: center;
+  top: 30px;
+}
+.bottomtext{
+  color: white;
+  position: relative;
+  top: 30px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+.aivasubs{
+  background-color: #1C97EA;
+  width: 160px;
+  border-radius:25px;
+  height: 40px;
+  margin-top: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.aivadetails{
+  color: black;
+  position: relative;
+  top: 50px;
+  justify-self:center;
+  align-self: center;
+  justify-content: center;
 }

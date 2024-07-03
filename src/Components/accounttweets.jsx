@@ -90,7 +90,7 @@ export default function AccountTweets() {
     setTweets(prevTweets => [...prevTweets, ...tweetData.filter(tweet => tweet !== null)]);
     setLastVisible(lastVisibleTweet + 10);
   };
-
+  const [tweetcount,settweetcount]=useState([]);
   const fetchtweets = async (lastVisibleTweet) => {
     setLoading(true);
     onAuthStateChanged(auth, async (user) => {
@@ -101,6 +101,8 @@ export default function AccountTweets() {
         if (docSnap.exists()) {
           const tweetids = docSnap.data().TIDs;
           await fetchTweetsFromIds(tweetids, lastVisibleTweet, uid);
+          settweetcount(tweetids)
+          // console.log(tweetcount)
         }
       } else {
         // console.log('signed out');
@@ -182,7 +184,7 @@ export default function AccountTweets() {
       }
     })
   }
-  const getprofilepics = () => {
+  const getprofilepics =async () => {
     const firebaseConfig = {
       apiKey: "AIzaSyDZ_ktB0uBgEPdU1tfaUfxWJ3sTqgEMmvs",
       authDomain: "wingedwordsadmin.firebaseapp.com",
@@ -212,6 +214,7 @@ export default function AccountTweets() {
 
       }
     })
+
   }
   return (
     <>
@@ -228,6 +231,9 @@ export default function AccountTweets() {
         <svg viewBox="0 0 24 24" aria-hidden="true" height="30" width="30" className="backbutton"><g><path d="M7.414 13l5.043 5.04-1.414 1.42L3.586 12l7.457-7.46 1.414 1.42L7.414 11H21v2H7.414z" fill='white'></path></g></svg>
         </Link>
         <p className='navusername'>{name}</p>
+        <div className="postscount">
+        {/* {tweets.length} Wings */}
+        </div>
         </div>
         <div className="coverpicture">
           <img src={coverpic} alt="" />
@@ -237,6 +243,7 @@ export default function AccountTweets() {
         </div>
         <div className="username">
           <p>{name}</p>
+          
         </div>
         <div className="tweets">
           {tweets.map((tweet, index) => (

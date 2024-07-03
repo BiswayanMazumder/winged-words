@@ -4,6 +4,7 @@ import Followingpage from './Components/followingpage';
 import Login from './Components/login';
 import Loginpage from './Components/loginpage';
 import Signup from './Components/signup';
+import Aiva from './aiva';
 import FollowingpageUI from './followingpageUI';
 import './home.css';
 import * as ReactDOM from "react-dom/client";
@@ -34,6 +35,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/account' element={<Account/>}/>
+      </Routes>
+      <Routes>
+        <Route path='/AIVA' element={<Aiva/>}/>
       </Routes>
     </BrowserRouter>
   )
