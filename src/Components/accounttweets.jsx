@@ -48,7 +48,7 @@ export default function AccountTweets() {
           owner: tweetDocSnap.data()["Uploaded UID"]
         };
       } else {
-        console.log("No such document!");
+        // console.log("No such document!");
         return null;
       }
     }));
@@ -102,7 +102,7 @@ export default function AccountTweets() {
           await fetchTweetsFromIds(tweetids, lastVisibleTweet, uid);
         }
       } else {
-        console.log('signed out');
+        // console.log('signed out');
         window.location.replace("/");
       }
       setLoading(false);
@@ -125,7 +125,7 @@ export default function AccountTweets() {
   }, [inView]);
 
   const selectedTab = (tab) => {
-    console.log(tab);
+    // console.log(tab);
   };
   const getusers = () => {
     const app = initializeApp(firebaseConfig);
@@ -136,13 +136,13 @@ export default function AccountTweets() {
       if (user) {
         const uid = user.uid;
         // isloggedin = true;
-        console.log('signed in')
+        // console.log('signed in')
         //   window.location.replace("loggedinpage.html")
         // ...
       } else {
         // User is signed out
         // ...
-        console.log('signed out')
+        // console.log('signed out')
         window.location.replace("/")
       }
     });
@@ -175,7 +175,7 @@ export default function AccountTweets() {
         const docSnap = await getDoc(userDocRef);
         if (docSnap.exists()) {
           setcoverpic(docSnap.data()["Cover Picture"])
-          console.log("Cover Picture: ", coverpic);
+          // console.log("Cover Picture: ", coverpic);
         }
 
       }
@@ -206,7 +206,7 @@ export default function AccountTweets() {
         const docSnap = await getDoc(userDocRef);
         if (docSnap.exists()) {
           setprofilepic(docSnap.data()["Profile Pic"])
-          console.log("profile Picture: ", profilepic);
+          // console.log("profile Picture: ", profilepic);
         }
 
       }
