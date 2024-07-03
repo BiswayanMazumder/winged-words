@@ -40,6 +40,11 @@ export default function Navbar() {
           });
         
       }
+      const  signOut=async()=>{
+        const auth = getAuth();
+        await auth.signOut();
+        window.location.replace("/")
+      }
     return (
         <>
             <div className="options" onLoad={getusers()}>
@@ -93,6 +98,11 @@ export default function Navbar() {
                             <div className="postbuttontext">Post</div>
                         </div>
                     </div>
+                    <Link className="button1" onClick={signOut}>
+                        <div className="postbutton">
+                            <div className="postbuttontext" >Sign out</div>
+                        </div>
+                    </Link>
                     <div className="buttonpost">
                         <div className="postbuttontab">
                             <div className="createaccounttext">
@@ -100,6 +110,7 @@ export default function Navbar() {
                             </div>
                         </div>
                     </div>
+                    
 
                 </div>
             </div>
