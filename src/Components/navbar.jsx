@@ -1,11 +1,48 @@
-import React from 'react'
-import Floatingpostbutton from './floatingpostbutton'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getAuth, signInWithPopup, GoogleAuthProvider,onAuthStateChanged } from "firebase/auth";
 
 export default function Navbar() {
+    const [text,settext]=useState('');
+    const getusers = () => {
+        const firebaseConfig = {
+          apiKey: "AIzaSyDZ_ktB0uBgEPdU1tfaUfxWJ3sTqgEMmvs",
+          authDomain: "wingedwordsadmin.firebaseapp.com",
+          databaseURL: "https://wingedwordsadmin-default-rtdb.firebaseio.com",
+          projectId: "wingedwordsadmin",
+          storageBucket: "wingedwordsadmin.appspot.com",
+          messagingSenderId: "386908666811",
+          appId: "1:386908666811:web:a979774edcac6706c1229e",
+          measurementId: "G-38QRTWBK7L"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth();
+        const provider = new GoogleAuthProvider();
+          onAuthStateChanged(auth, (user) => {
+            if (user) {
+              const uid = user.uid;
+              // isloggedin = true;
+            //   console.log(uid);
+              settext(uid)
+
+              // ...
+            } else {
+              // User is signed out
+              // ...
+              console.log('signed out')
+              
+            }
+          });
+        
+      }
     return (
         <>
-            <div className="options">
+            <div className="options" onLoad={getusers()}>
                 <div className="optionnames">
                     <Link to="/home" className="homelogo">
                         <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" className="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-1nao33i r-rxcuwo r-1777fci r-m327ed r-494qqr">
