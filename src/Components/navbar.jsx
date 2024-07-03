@@ -99,7 +99,7 @@ export default function Navbar() {
                         </div>
                     </div>
                     <Link className="button1" onClick={signOut}>
-                        <div className="postbutton">
+                        <div className="logoutbutton">
                             <div className="postbuttontext" >Sign out</div>
                         </div>
                     </Link>

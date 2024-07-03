@@ -604,3 +604,15 @@
   top: 22px;
   left: 10px;
 }
+.logoutbutton{
+  align-items: center;
+  background-color: red;
+  border-radius: 25px;
+  display: flex;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+  height: 50px;
+  justify-content: center;
+  margin-top: 20px;
+  text-align: center;
+  width: 180px;
+}
