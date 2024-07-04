@@ -503,7 +503,7 @@
 .tweets{
   font-size: 15px;
   position: relative;
-  top: 90px;
+  top: 70px;
   /* font-weight: bolder; */
   color: white;
   text-align: justify;
@@ -533,7 +533,7 @@
   /* background-color: green; */
   display: flex;
   top:-35px;
-  flex-direction: column;
+  flex-direction: row;
   font-weight: 700;
 }
 .profileimage{
@@ -569,7 +569,7 @@
 .username{
   color: white;
   position: relative;
-  top: 50px;
+  top: 20px;
   left: 10px;
   gap: 10px;
   display: flex;
