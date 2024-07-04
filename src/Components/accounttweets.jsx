@@ -96,7 +96,7 @@ export default function AccountTweets() {
     onAuthStateChanged(auth, async (user) => {
       if (user) {
         const uid = user.uid; // <-- Get UID of logged-in user
-        const userDocRef = doc(db, "User Uploaded Tweet ID", uid);
+        const userDocRef = doc(db, "User Uploaded Tweet ID", uid); //change UID here for tweets from other users
         const docSnap = await getDoc(userDocRef);
         if (docSnap.exists()) {
           const tweetids = docSnap.data().TIDs;
@@ -175,11 +175,14 @@ export default function AccountTweets() {
     onAuthStateChanged(auth, async (user) => {
       if (user) {
         const uid = user.uid;
-        const userDocRef = doc(db, "Cover Picture", uid);
+        const userDocRef = doc(db, "Cover Picture", uid);//change UID here for cover pic from other users
         const docSnap = await getDoc(userDocRef);
         if (docSnap.exists()) {
           setcoverpic(docSnap.data()["Cover Picture"])
           // console.log("Cover Picture: ", coverpic);
+        }
+        else{
+          setcoverpic("https://images.pexels.com/photos/1029141/pexels-photo-1029141.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
         }
 
       }
@@ -206,7 +209,7 @@ export default function AccountTweets() {
     onAuthStateChanged(auth, async (user) => {
       if (user) {
         const uid = user.uid;
-        const userDocRef = doc(db, "User Details", uid);
+        const userDocRef = doc(db, "User Details", uid);////change UID here for profile pic from other users
         const docSnap = await getDoc(userDocRef);
         if (docSnap.exists()) {
           setprofilepic(docSnap.data()["Profile Pic"])

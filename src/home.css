@@ -5,10 +5,12 @@
  }
  body{
   scroll-behavior: smooth;
+  text-decoration: none ;
   background-color: black;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  }
 .container{
+  text-decoration: none ;
   /* position:absolute; */
   justify-content: center;
 }
@@ -322,6 +324,7 @@
 .posts{
   margin-left: 110px;
   height: 100vh;
+  text-decoration: none ;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -505,6 +508,7 @@
   font-size: 15px;
   position: relative;
   top: 85px;
+  text-decoration: none ;
   /* font-weight: bolder; */
   color: white;
   text-align: justify;
@@ -521,6 +525,7 @@
 .userdetails{
   padding-top: 20px;
   padding-bottom: 20px;
+  text-decoration: none ;
 }
 .profilepics{
   height: 40px;
@@ -529,6 +534,8 @@
   /* background-color: aliceblue; */
 }
 .ownername{
+  text-decoration: none;
+  color: white;
   position: relative;
   left: 50px;
   width:70vw;
@@ -681,4 +688,8 @@
   justify-self:center;
   align-self: center;
   justify-content: center;
+}
+.ownertweetname{
+  text-decoration: none;
+  color: white;
 }
