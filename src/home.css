@@ -4,6 +4,7 @@
   padding: 0;
  }
  body{
+  scroll-behavior: smooth;
   background-color: black;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  }
@@ -503,7 +504,7 @@
 .tweets{
   font-size: 15px;
   position: relative;
-  top: 70px;
+  top: 85px;
   /* font-weight: bolder; */
   color: white;
   text-align: justify;
@@ -536,6 +537,7 @@
   top:-35px;
   flex-direction: row;
   font-weight: 700;
+  gap: 10px;
 }
 .profileimage{
   height: 40px;
