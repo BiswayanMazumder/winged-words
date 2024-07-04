@@ -59,7 +59,7 @@ export default function AccountTweets() {
       const userDetailsDocSnap = await getDoc(userDetailsDocRef);
       if (userDetailsDocSnap.exists()) {
         setname(userDetailsDocSnap.data()["Name"])
-        
+        document.title=userDetailsDocSnap.data()["Name"]
         return {
           id: userId,
           name: userDetailsDocSnap.data()["Name"],
@@ -131,6 +131,7 @@ export default function AccountTweets() {
     // console.log(tab);
   };
   const getusers = () => {
+    
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
     const provider = new GoogleAuthProvider();
