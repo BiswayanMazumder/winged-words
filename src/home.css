@@ -571,7 +571,15 @@
   position: relative;
   top: 50px;
   left: 10px;
+  gap: 10px;
+  display: flex;
+  flex-direction: row;
   font-weight: bolder;
+}
+.verified{
+  position: relative;
+  top: 2px;
+  color: white;
 }
 .nav{
   background-color: black;
