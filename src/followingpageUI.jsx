@@ -206,7 +206,7 @@ const FollowingpageUI = () => {
               <img src={tweetimg[index]} alt="" className='tweetimages' />
             </div>
           ))}
-          {loadingMore && <p>Loading more...</p>}
+          {/* {loadingMore && <p>Loading more...</p>} */}
         </div>
       </div>
       <Homepagethirdsection />
