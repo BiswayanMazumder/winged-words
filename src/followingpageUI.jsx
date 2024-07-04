@@ -203,6 +203,7 @@ const FollowingpageUI = () => {
                 </div>
               </div>
               <p>{tweet}</p>
+              <br/>
               <img src={tweetimg[index]} alt="" className='tweetimages' />
             </div>
           ))}
