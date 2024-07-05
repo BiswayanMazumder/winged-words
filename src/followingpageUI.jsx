@@ -135,11 +135,11 @@ const FollowingpageUI = () => {
           const userPromises = newTweetownerid.map(ownerId => {
             const userDocRef = doc(db, "User Details", ownerId);
             UserID.push(ownerId);
-            console.log('user id'+UserID);
+            // console.log('user id'+UserID);
             return getDoc(userDocRef);
           });
           setuserid(UserID);
-          console.log('users'+userid);
+          // console.log('users'+userid);
           const userSnapshots = await Promise.all(userPromises);
           const newTweetuserphoto = userSnapshots.map(docSnap => {
             if (docSnap.exists()) {
