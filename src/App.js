@@ -15,6 +15,7 @@ import {
 } from 'react-router-dom';
 import { Analytics } from "@vercel/analytics/react"
 import Otherusertweets from './Components/otherusertweets';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 function App() {
   return (
     // https://www.adobe.com/express/learn/blog/media_19a6320255f0ee0bf15d2e9937607b9fa757a20cc.jpeg?width=1200&format=pjpg&optimize=medium
@@ -44,6 +45,7 @@ function App() {
         <Route path='/other' element={<Otherusertweets/>}/>
       </Routes>
       <Analytics />
+      <SpeedInsights />
     </BrowserRouter>
     
   )
