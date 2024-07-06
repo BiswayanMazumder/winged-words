@@ -65,8 +65,7 @@ export default function Posts() {
         }
       }));
       // console.log("uniqueUserIds", userID);
-
-
+      //fetching tweets
       const uniqueUserIds = [...new Set(tweets.map(tweet => tweet.owner))];
       const userDetails = await Promise.all(uniqueUserIds.map(async (userId) => {
         const userDetailsDocRef = doc(db, "User Details", userId);
