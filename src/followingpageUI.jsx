@@ -181,7 +181,6 @@ const FollowingpageUI = () => {
   }, [inView, loadingMore]);
 
   // Render UI
-  // console.log('userid'+userid);
   return (
     <>
       <div className="posts">
