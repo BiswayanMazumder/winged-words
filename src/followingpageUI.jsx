@@ -180,7 +180,7 @@ const FollowingpageUI = () => {
     fetchMoreTweets();
   }, [inView, loadingMore]);
 
-  // Render UI 
+  // Render UI  
   return (
     <>
       <div className="posts">
