@@ -2,49 +2,49 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth, signInWithPopup, GoogleAuthProvider,onAuthStateChanged } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
 
 export default function Navbar() {
-    const [text,settext]=useState('');
+    const [text, settext] = useState('');
     const getusers = () => {
         const firebaseConfig = {
-          apiKey: "AIzaSyDZ_ktB0uBgEPdU1tfaUfxWJ3sTqgEMmvs",
-          authDomain: "wingedwordsadmin.firebaseapp.com",
-          databaseURL: "https://wingedwordsadmin-default-rtdb.firebaseio.com",
-          projectId: "wingedwordsadmin",
-          storageBucket: "wingedwordsadmin.appspot.com",
-          messagingSenderId: "386908666811",
-          appId: "1:386908666811:web:a979774edcac6706c1229e",
-          measurementId: "G-38QRTWBK7L"
+            apiKey: "AIzaSyDZ_ktB0uBgEPdU1tfaUfxWJ3sTqgEMmvs",
+            authDomain: "wingedwordsadmin.firebaseapp.com",
+            databaseURL: "https://wingedwordsadmin-default-rtdb.firebaseio.com",
+            projectId: "wingedwordsadmin",
+            storageBucket: "wingedwordsadmin.appspot.com",
+            messagingSenderId: "386908666811",
+            appId: "1:386908666811:web:a979774edcac6706c1229e",
+            measurementId: "G-38QRTWBK7L"
         };
-    
+
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
         const auth = getAuth();
         const provider = new GoogleAuthProvider();
-          onAuthStateChanged(auth, (user) => {
+        onAuthStateChanged(auth, (user) => {
             if (user) {
-              const uid = user.uid;
-              // isloggedin = true;
-            //   console.log(uid);
-              settext(uid)
+                const uid = user.uid;
+                // isloggedin = true;
+                //   console.log(uid);
+                settext(uid)
 
-              // ...
+                // ...
             } else {
-              // User is signed out
-              // ...
-              console.log('signed out')
-              
+                // User is signed out
+                // ...
+                console.log('signed out')
+
             }
-          });
-        
-      }
-      const  signOut=async()=>{
+        });
+
+    }
+    const signOut = async () => {
         const auth = getAuth();
         await auth.signOut();
         window.location.replace("/")
-      }
+    }
     return (
         <>
             <div className="options" onLoad={getusers()}>
@@ -57,17 +57,19 @@ export default function Navbar() {
                         </svg>
                     </Link>
                     <Link to="/home" className="homeicon">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" height="30" width="30" class="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-1nao33i r-lwhw9o r-cnnz9e"><g><path d="M21.591 7.146L12.52 1.157c-.316-.21-.724-.21-1.04 0l-9.071 5.99c-.26.173-.409.456-.409.757v13.183c0 .502.418.913.929.913h6.638c.511 0 .929-.41.929-.913v-7.075h3.008v7.075c0 .502.418.913.929.913h6.639c.51 0 .928-.41.928-.913V7.904c0-.301-.158-.584-.408-.758zM20 20l-4.5.01.011-7.097c0-.502-.418-.913-.928-.913H9.44c-.511 0-.929.41-.929.913L8.5 20H4V8.773l8.011-5.342L20 8.764z" fill='white'></path></g></svg>
+                        <svg viewBox="0 0 24 24" aria-hidden="true" height="30" width="30" class="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-1nao33i r-lwhw9o r-cnnz9e"><g><path d="M21.591 7.146L12.52 1.157c-.316-.21-.724-.21-1.04 0l-9.071 5.99c-.26.173-.409.456-.409.757v13.183c0 .502.418.913.929.913h6.638c.511 0 .929-.41.929-.913v-7.075h3.008v7.075c0 .502.418.913.929.913h6.639c.51 0 .928-.41.928-.913V7.904c0-.301-.158-.584-.408-.758zM20 20l-4.5.01.011-7.097c0-.502-.418-.913-.928-.913H9.44c-.511 0-.929.41-.929.913L8.5 20H4V8.773l8.011-5.342L20 8.764z" fill='white'></path></g></svg>
                         <div className="othertitles">
                             Home
                         </div>
                     </Link>
-                    <div className="homeicon">
-                        <svg viewBox="0 0 24 24" aria-hidden="true" class="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-1nao33i r-lwhw9o r-cnnz9e" width="30" height="30"><g><path d="M10.25 3.75c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5c1.795 0 3.419-.726 4.596-1.904 1.178-1.177 1.904-2.801 1.904-4.596 0-3.59-2.91-6.5-6.5-6.5zm-8.5 6.5c0-4.694 3.806-8.5 8.5-8.5s8.5 3.806 8.5 8.5c0 1.986-.682 3.815-1.824 5.262l4.781 4.781-1.414 1.414-4.781-4.781c-1.447 1.142-3.276 1.824-5.262 1.824-4.694 0-8.5-3.806-8.5-8.5z" fill='white'></path></g></svg>
-                        <div className="othertitles">
-                            Explore
+                    <Link to="/Explore" className='exploreicon'>
+                        <div className="homeicon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" class="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-1nao33i r-lwhw9o r-cnnz9e" width="30" height="30"><g><path d="M10.25 3.75c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5c1.795 0 3.419-.726 4.596-1.904 1.178-1.177 1.904-2.801 1.904-4.596 0-3.59-2.91-6.5-6.5-6.5zm-8.5 6.5c0-4.694 3.806-8.5 8.5-8.5s8.5 3.806 8.5 8.5c0 1.986-.682 3.815-1.824 5.262l4.781 4.781-1.414 1.414-4.781-4.781c-1.447 1.142-3.276 1.824-5.262 1.824-4.694 0-8.5-3.806-8.5-8.5z" fill='white'></path></g></svg>
+                            <div className="othertitles">
+                                Explore
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                     <div className="homeicon">
                         <svg viewBox="0 0 24 24" aria-hidden="true" class="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-1nao33i r-lwhw9o r-cnnz9e" width="30" height="30"><g><path d="M19.993 9.042C19.48 5.017 16.054 2 11.996 2s-7.49 3.021-7.999 7.051L2.866 18H7.1c.463 2.282 2.481 4 4.9 4s4.437-1.718 4.9-4h4.236l-1.143-8.958zM12 20c-1.306 0-2.417-.835-2.829-2h5.658c-.412 1.165-1.523 2-2.829 2zm-6.866-4l.847-6.698C6.364 6.272 8.941 4 11.996 4s5.627 2.268 6.013 5.295L18.864 16H5.134z" fill='white'></path></g></svg>
                         <div className="othertitles">
@@ -110,7 +112,7 @@ export default function Navbar() {
                             </div>
                         </div>
                     </div>
-                    
+
 
                 </div>
             </div>
