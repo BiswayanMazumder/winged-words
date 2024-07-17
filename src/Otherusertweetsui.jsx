@@ -296,8 +296,44 @@ export default function Otherusertweetsui(props) {
   
         }
       })
-      // console.log("Privacy: ", privatests);
+      console.log("Privacy: ", privatests);
     }
+    var isfollowed = false;
+
+// Retrieve the initial state from localStorage
+if (localStorage.getItem("isfollowed") === "true") {
+  isfollowed = true;
+}
+
+// Set the initial button text based on the stored value
+document.addEventListener("DOMContentLoaded", () => {
+  var followbutton = document.querySelector('.followbutton');
+  followbutton.innerHTML = isfollowed ? "Following" : "Follow";
+});
+
+const followfunction = async () => {
+  console.log('Clicked');
+  console.log('Follow', isfollowed);
+  
+  var followbutton = document.querySelector('.followbutton');
+  
+  if (isfollowed) {
+    isfollowed = false;
+    localStorage.setItem("isfollowed", "false");
+    followbutton.innerHTML = 'Follow';
+  } else {
+    isfollowed = true;
+    localStorage.setItem("isfollowed", "true");
+    followbutton.innerHTML = 'Following';
+  }
+}
+
+// Add an event listener to the button
+document.addEventListener("DOMContentLoaded", () => {
+  var followbutton = document.querySelector('.followbutton');
+  followbutton.addEventListener("click", followfunction);
+});
+
     return (
       <>
         <div className="posts" onLoad={getusers()}{...getcoverpics()}{...getprofilepics()}{...getverification()}{...getpublic()}>
@@ -327,6 +363,11 @@ export default function Otherusertweetsui(props) {
             <p>{name}</p>
             <div className="verified">
             </div>
+            <Link className='follow' onClick={followfunction}>
+            <div className="followbutton">
+            Following
+            </div>
+            </Link>
           </div>
           <div className="tweets">
             {tweets.map((tweet, index) => (
