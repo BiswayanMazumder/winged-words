@@ -5,7 +5,7 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth, onAuthStateChanged, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { useInView } from 'react-intersection-observer';
-
+import { Bars, Circles } from 'react-loading-icons'
 export default function Posts() {
   const [verified, setverified] = useState([]);
   const [tweets, setTweets] = useState([]);
@@ -202,7 +202,8 @@ export default function Posts() {
               {tweet.imageUrl && <img src={tweet.imageUrl} alt="Tweet Image" className='tweetimages' />}
             </div>
           ))}
-          {loading && <p>Loading Wings...</p>}
+          <br/>
+          {<p>Loading</p>}
         </div>
       </div>
     </>

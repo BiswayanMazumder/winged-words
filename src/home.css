@@ -696,3 +696,37 @@
 .exploreicon{
   text-decoration: none;
 }
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  width: 50vw;
+}
+.explorebody {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.exploreimage {
+  width: 100%;
+  display: block;
+}
+
+.texts {
+  position: absolute;
+  bottom: 0;
+  font-weight: bolder;
+  font-size: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  /* text-align: center; */
+  width: 100%;
+  box-sizing: border-box;
+}
