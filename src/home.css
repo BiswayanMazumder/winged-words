@@ -706,6 +706,7 @@
   text-align: center;
 }
 .aivadetails{
+  text-decoration: none;
   color: black;
   position: relative;
   top: 50px;

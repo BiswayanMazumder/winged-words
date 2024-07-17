@@ -163,7 +163,7 @@ const FollowingpageUI = () => {
             return getDoc(userDocRef);
           });
           setuserid(UserID);
-          console.log('users'+UserID);
+          // console.log('users'+UserID);
           const userSnapshots = await Promise.all(userPromises);
           const newTweetuserphoto = userSnapshots.map(docSnap => {
             if (docSnap.exists()) {
