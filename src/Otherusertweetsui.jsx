@@ -262,9 +262,45 @@ export default function Otherusertweetsui(props) {
       })
   
     }
+    const [privatests,setprivate]=useState(false);
+    const getpublic = () => {
+      const firebaseConfig = {
+        apiKey: "AIzaSyDZ_ktB0uBgEPdU1tfaUfxWJ3sTqgEMmvs",
+        authDomain: "wingedwordsadmin.firebaseapp.com",
+        databaseURL: "https://wingedwordsadmin-default-rtdb.firebaseio.com",
+        projectId: "wingedwordsadmin",
+        storageBucket: "wingedwordsadmin.appspot.com",
+        messagingSenderId: "386908666811",
+        appId: "1:386908666811:web:a979774edcac6706c1229e",
+        measurementId: "G-38QRTWBK7L"
+      };
+  
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      const analytics = getAnalytics(app);
+      const auth = getAuth();
+      const provider = new GoogleAuthProvider();
+      onAuthStateChanged(auth, async (user) => {
+        if (user) {
+          const uid = user.uid;
+          const userDocRef = doc(db, "Account Status", ownerid);////change UID here for profile pic from other users
+          const docSnap = await getDoc(userDocRef);
+          if (docSnap.exists()) {
+            setprivate(docSnap.data()["Public Account"])
+            
+          }
+          else{
+            setprivate(false);
+          }
+  
+        }
+      })
+      // console.log("Privacy: ", privatests);
+    }
     return (
       <>
-        <div className="posts" onLoad={getusers()}{...getcoverpics()}{...getprofilepics()}{...getverification()}>
+        <div className="posts" onLoad={getusers()}{...getcoverpics()}{...getprofilepics()}{...getverification()}{...getpublic()}>
           <div className="logomobile">
             <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" className="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-1nao33i r-rxcuwo r-1777fci r-m327ed r-494qqr">
               <g>

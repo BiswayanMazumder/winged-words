@@ -18,6 +18,7 @@ const FollowingpageUI = () => {
   const [tweetownerid, settweetownerid] = useState([]);
   const [loadingMore, setLoadingMore] = useState(false);
   const [userid, setuserid] = useState([]);
+  const [privateacc,setprivate]=useState([]);
   const { ref, inView } = useInView({
     threshold: 0.5,
   });
@@ -42,7 +43,7 @@ const FollowingpageUI = () => {
 
   // Function to handle selected tab
   const selectedTab = (tab) => {
-    console.log(tab);
+    // console.log(tab);
   };
 
   // Check user authentication state
@@ -60,7 +61,28 @@ const FollowingpageUI = () => {
 
     checkAuthState();
   }, [auth]);
-
+  // useEffect(() => {
+  //   const fetchPrivate = async () => {
+  //     await fetchFollowers();
+  //     const user = auth.currentUser;
+  //     if (user) {
+  //       const uid = user.uid;
+  //       const userDocRef = doc(db, "Account Status", uid);
+  //       try {
+  //         const docSnap = await getDoc(userDocRef);
+  //         if (docSnap.exists()) {
+  //           setprivate(docSnap.data()["Public Account"]);
+  //         }else{
+  //           setprivate(false);
+  //         }
+  //       } catch (error) {
+  //         console.error("Error fetching private:", error);
+  //       }
+  //     }
+  //     // console.log('prvate ${privateacc}')
+  //   }
+  //   fetchPrivate();
+  // },[auth,db]);
   // Fetch followers when component mounts or auth state changes
   useEffect(() => {
     const fetchFollowers = async () => {
@@ -79,6 +101,8 @@ const FollowingpageUI = () => {
           console.error("Error fetching followers:", error);
         }
       }
+      // console.log('account sts',privateacc);
+      
     };
 
     fetchFollowers();
@@ -210,6 +234,7 @@ const FollowingpageUI = () => {
                   <img src={tweetuserphoto[index]} alt="" className='profileimage' />
                   <div className="ownername">
                     <Link className='ownertweetname' onClick={() => {
+                      
                       localStorage.setItem('userid', userid[index]);
                       window.location.href = '/other'
                     }}>
