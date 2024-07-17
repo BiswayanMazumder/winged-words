@@ -188,7 +188,6 @@
   overflow: hidden;
 }
 .optionnames{
-
   padding-left: 80px;
   margin-top: 10px;
 }
@@ -205,6 +204,7 @@
     background-color: black;
     position: fixed;
     top: 89%;
+    align-items: start;
     display: flex;
     flex-direction: row;
   }
@@ -695,6 +695,21 @@
 }
 .exploreicon{
   text-decoration: none;
+  width: 180px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: 35px;
+  border-radius: 20px;
+  font-size: 20px;
+  color: white;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  font-weight: bolder;
+  gap: 20px;
 }
 .header{
   display: flex;

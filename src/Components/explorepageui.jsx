@@ -14,20 +14,28 @@ export default function Explorepageui() {
         </svg>
       </div>
       <Link>
-      <div className="explorebody">
-        <img src="https://esportsworldcup.com/assets/Esports_World_Cup_Open_Graph_Thumbnail_36968128bd.png" alt="" className='exploreimage' />
-        <div className="texts">
+        <div className="explorebody">
+          <img src="https://esportsworldcup.com/assets/Esports_World_Cup_Open_Graph_Thumbnail_36968128bd.png" alt="" className='exploreimage' />
+          <div className="texts">
             Esports World Cup 2024
+          </div>
         </div>
-    </div>
       </Link>
       <Link>
-      <div className="explorebody">
-        <img src="https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-sunburn-arena-ft-alan-walker-kolkata-0-2024-7-15-t-9-30-52.jpg" alt="" className='exploreimage' />
-        <div className="texts">
-        Sunburn Arena Ft. Alan Walker - Kolkata
+        <div className="explorebody">
+          <img src="https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-sunburn-arena-ft-alan-walker-kolkata-0-2024-7-15-t-9-30-52.jpg" alt="" className='exploreimage' />
+          <div className="texts">
+            Sunburn Arena Ft. Alan Walker - Kolkata
+          </div>
         </div>
-    </div>
+      </Link>
+      <Link>
+        <div className="explorebody">
+          <img src="https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-baap-ko-mat-sikha-hindi-stand-up-show-0-2023-11-23-t-8-22-27.jpg" alt="" className='exploreimage' />
+          <div className="texts">
+            Baap Ko Mat Sikha - by Pranit More
+          </div>
+        </div>
       </Link>
     </div>
   )
