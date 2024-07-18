@@ -42,6 +42,15 @@ export default function AIVAdetails() {
               console.error("Error fetching followers:", error);
             }
           }
+        //   console.log('subbed',subs);
+          var subbeduser=document.querySelector('.aivasubs')
+          if(subs){
+            // alert('subbed')
+            subbeduser.innerHTML=`<div className="postbuttontext">Coming Soon</div>`
+          }
+          else{
+            subbeduser.innerHTML=`<div className="postbuttontext">Subscribe</div>`
+          }
           
     }
     return (
@@ -56,10 +65,10 @@ export default function AIVAdetails() {
 
                     </h1>
                 </div>
-                <Link className="aivadetails" onClick={getsusbstatus} to="/welcome">
+                <Link className="aivadetails" onClick={getsusbstatus}>
                 <div >
                     <div className="aivasubs">
-                        <div className="postbuttontext">Subscribe</div>
+                    <div className="postbuttontext">Subscribe</div>
                     </div>
                 </div>
                 </Link>
