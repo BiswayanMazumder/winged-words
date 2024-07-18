@@ -277,6 +277,9 @@
   align-items: center;
   text-align: center;
 }
+.postingbutton{
+  text-decoration: none;
+}
 .postbuttontabmobile{
   background-color: #1C97EA;
   width: 55px;
@@ -816,4 +819,37 @@
   display: flex;
   align-items: center;
   
+}
+.tweetbody{
+  position: relative;
+  width: 100vw;
+  height: 85vh;
+  background-color: #343540;
+}
+.tweetsinput {
+  position: relative;
+  /* overflow: scroll; */
+  width: 50vw;
+  height: 84vh;
+  background-color: #343540;
+  border: 0px 0px 1px solid;
+  text-align: start;
+  padding-left: 10px;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  white-space: normal; /* Ensure text wraps to the next line */
+  word-wrap: break-word; /* Break long words to the next line if necessary */
+}
+@media screen and (max-width:500px){
+  .tweetsinput{
+   width: 100vw
+  }
+}
+
+.messagecenter{
+  height: 15vh;
+  width:110vw ;
+  border-color: whitesmoke;
+  background-color: #333;
 }

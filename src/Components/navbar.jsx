@@ -93,11 +93,13 @@ export default function Navbar() {
                         </div>
                     </Link>
 
+                    <Link className='postingbutton' to="/Post">
                     <div className="button1">
                         <div className="postbutton">
                             <div className="postbuttontext">Post</div>
                         </div>
                     </div>
+                    </Link>
                     <Link className="button1" onClick={signOut}>
                         <div className="postbutton">
                             <div className="postbuttontext" >Sign out</div>
