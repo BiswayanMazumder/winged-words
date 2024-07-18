@@ -33,6 +33,7 @@ export default function Loginpage() {
         const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
+        localStorage.setItem("newuser",false);
         // IdP data available using getAdditionalUserInfo(result)
         window.location.href="/home"
         // ...

@@ -29,6 +29,10 @@ export default function Signup() {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
+        localStorage.setItem("email", email);
+        localStorage.setItem("password",password);
+        localStorage.setItem("pfp","https://cdn.prod.website-files.com/5d66bdc65e51a0d114d15891/64cebc6c19c2fe31de94c78e_X-vector-logo-download.png");
+        localStorage.setItem("newuser",true);
         window.location.href="/home"
         // ...
       })

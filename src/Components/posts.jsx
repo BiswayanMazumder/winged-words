@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, onAuthStateChanged, GoogleAuthProvider } from "firebase/auth";
-import { getFirestore, doc, getDoc } from "firebase/firestore";
+import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 import { useInView } from 'react-intersection-observer';
 import { Bars, Circles } from 'react-loading-icons'
 export default function Posts() {
@@ -161,9 +161,38 @@ export default function Posts() {
       }
     });
   }
+  const writedetailstodb = async () => {
+    const email=localStorage.getItem('email');
+    const password=localStorage.getItem('password');
+    const pfp=localStorage.getItem('pfp');
+    const newuser=localStorage.getItem('newuser');
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const provider = new GoogleAuthProvider();
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if(newuser){
+        if (user) {
+          const uid = user.uid;
+          // write user details to db
+          const userDocRef = doc(db, "User Details", uid);
+          setDoc(userDocRef, {
+            "Email": email,
+            "Password": password,
+            "Profile Pic": pfp
+          });
+          localStorage.setItem("newuser",false);
+          // ...
+        } else {
+          // User is signed out
+          // ...
+        }
+      }
+    });
+  }
   return (
     <>
-      <div className="posts" onLoad={getusers()}{...fetchverification()}>
+      <div className="posts" onLoad={getusers()}{...fetchverification()}{...writedetailstodb()}>
         <div className="logomobile">
           <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" className="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-1nao33i r-rxcuwo r-1777fci r-m327ed r-494qqr">
             <g>

@@ -42,7 +42,7 @@ export default function AIVAdetails() {
               console.error("Error fetching followers:", error);
             }
           }
-        //   console.log('prem',subs)
+          
     }
     return (
         <>
@@ -56,7 +56,7 @@ export default function AIVAdetails() {
 
                     </h1>
                 </div>
-                <Link className="aivadetails" onClick={getsusbstatus}>
+                <Link className="aivadetails" onClick={getsusbstatus} to="/welcome">
                 <div >
                     <div className="aivasubs">
                         <div className="postbuttontext">Subscribe</div>
