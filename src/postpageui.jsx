@@ -38,14 +38,14 @@ export default function Postpageui() {
                 if (docSnap.exists()) {
                     const followersData = docSnap.data()["TIDs"];
                     setwingsid(followersData);
-                    console.log('WIngs', wingsid);
+                    // console.log('WIngs', wingsid);
                 }
                 else {
-                    console.log('No such document!');
+                    // console.log('No such document!');
 
                 }
             } catch (error) {
-                console.error("Error fetching followers:", error);
+                // console.error("Error fetching followers:", error);
             }
         }
     }
@@ -61,7 +61,7 @@ export default function Postpageui() {
             createpostid();
         }
         await createpostid();
-        console.log('Postid', postid);
+        // console.log('Postid', postid);
         const auth = getAuth();
         const user = auth.currentUser;
         
@@ -87,7 +87,7 @@ export default function Postpageui() {
                    
                   });
             }).catch((error) => {
-                console.error("Error updating document: ", error);
+                // console.error("Error updating document: ", error);
             });
 
         }
@@ -126,11 +126,11 @@ export default function Postpageui() {
                       run();
                 }
                 else {
-                    console.log('No such document!');
+                    // console.log('No such document!');
 
                 }
             } catch (error) {
-                console.error("Error fetching followers:", error);
+                // console.error("Error fetching followers:", error);
             }
         }
     }
