@@ -847,6 +847,9 @@
    width: 100vw
   }
 }
+.createpost{
+  text-decoration: none;
+}
 @media screen and (min-width:501px) and (max-width:1000px){
   .tweetsinput{
    width: 70vw

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, onAuthStateChanged, GoogleAuthProvider } from "firebase/auth";
-import { getFirestore, doc, getDoc } from "firebase/firestore";
+import { getFirestore, doc, getDoc, setDoc, updateDoc, arrayUnion } from "firebase/firestore";
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { GoogleGenerativeAI } from "@google/generative-ai";
@@ -27,6 +27,7 @@ export default function Postpageui() {
         document.title = "Upload Wings";
     }
     const [wingsid, setwingsid] = useState([]);
+    const [tweetbody,settweetbody]=useState('');
     const getwingsid = async () => {
         const user = auth.currentUser;
         if (user) {
@@ -37,7 +38,7 @@ export default function Postpageui() {
                 if (docSnap.exists()) {
                     const followersData = docSnap.data()["TIDs"];
                     setwingsid(followersData);
-                    // console.log('WIngs', wingsid);
+                    console.log('WIngs', wingsid);
                 }
                 else {
                     console.log('No such document!');
@@ -47,6 +48,50 @@ export default function Postpageui() {
                 console.error("Error fetching followers:", error);
             }
         }
+    }
+    const createpost = async () => {
+        await getwingsid();
+        var postid=''
+        async function createpostid(){
+            for (var i = 0; i < 10; i++) {
+                postid += Math.floor(Math.random() * 10);
+            }
+        }
+        if (wingsid.includes(postid)) {
+            createpostid();
+        }
+        await createpostid();
+        console.log('Postid', postid);
+        const auth = getAuth();
+        const user = auth.currentUser;
+        
+        if (user) {
+            // Reference to the Global Tweet IDs document
+            const userDocRef = doc(db, "Global Tweet IDs", "TIDs");
+        
+            // Update the document and add the new postid to the array
+            updateDoc(userDocRef, {
+                "TIDs": arrayUnion(postid),
+            }).then(() => {
+                const userDocRef = doc(db, "User Uploaded Tweet ID", user.uid);
+        
+            // Update the document and add the new postid to the array
+            updateDoc(userDocRef, {
+                "TIDs": arrayUnion(postid),
+            })
+                const userDoc = doc(db, "Global Tweets", postid);
+                setDoc(userDoc, {
+                   "Image URL":null,
+                   "Tweet Message":tweetbody,
+                   "Uploaded UID":user.uid,
+                   
+                  });
+            }).catch((error) => {
+                console.error("Error updating document: ", error);
+            });
+
+        }
+        
     }
     const [apikey,setapikeys]=useState('');
     const getAPIKeys = async () => {
@@ -75,6 +120,7 @@ export default function Postpageui() {
                         // console.log(text);
                         var tweetinput=document.querySelector('.tweetsinput')
                         tweetinput.value=text;
+                        settweetbody(text);
                       }
                       
                       run();
@@ -90,7 +136,7 @@ export default function Postpageui() {
     }
     return (
         <>
-            <div className="posts" onLoad={getdocumentitle()}{...getwingsid()}>
+            <div className="posts" onLoad={getdocumentitle()}{...getwingsid}>
                 <div className="logomobile">
                     <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" className="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-1nao33i r-rxcuwo r-1777fci r-m327ed r-494qqr">
                         <g>
@@ -112,9 +158,11 @@ export default function Postpageui() {
                 <svg viewBox="0 0 24 24" aria-hidden="true" class="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-z80fyv r-19wmn03" height="40px" width="40px"><g><path d="M3 5.5C3 4.119 4.12 3 5.5 3h13C19.88 3 21 4.119 21 5.5v13c0 1.381-1.12 2.5-2.5 2.5h-13C4.12 21 3 19.881 3 18.5v-13zM5.5 5c-.28 0-.5.224-.5.5v13c0 .276.22.5.5.5h13c.28 0 .5-.224.5-.5v-13c0-.276-.22-.5-.5-.5h-13zM18 10.711V9.25h-3.74v5.5h1.44v-1.719h1.7V11.57h-1.7v-.859H18zM11.79 9.25h1.44v5.5h-1.44v-5.5zm-3.07 1.375c.34 0 .77.172 1.02.43l1.03-.86c-.51-.601-1.28-.945-2.05-.945C7.19 9.25 6 10.453 6 12s1.19 2.75 2.72 2.75c.85 0 1.54-.344 2.05-.945v-2.149H8.38v1.032H9.4v.515c-.17.086-.42.172-.68.172-.76 0-1.36-.602-1.36-1.375 0-.688.6-1.375 1.36-1.375z" fill='white'></path></g></svg>
                 </Link>
                 </div>
-                <div className="post">
+                <Link className='createpost' onClick={() => createpost()}>
+                <div className="post" >
                     Post
                 </div>
+                </Link>
                 </div>
             </div>
         </>

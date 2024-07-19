@@ -102,7 +102,7 @@ export default function AccountTweets() {
           const tweetids = docSnap.data().TIDs;
           await fetchTweetsFromIds(tweetids, lastVisibleTweet, uid);
           settweetcount(tweetids)
-          // console.log(tweetcount)
+          console.log(tweetids)
         }
       } else {
         // console.log('signed out');
