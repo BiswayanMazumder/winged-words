@@ -49,7 +49,7 @@ export default function Explorepageui() {
                     const text = response.text();
                     // console.log(text);
                     localStorage.setItem("Details",text);
-                    window.location.replace("/ESports")
+                    // window.location.replace("/ESports")
                   }
                   
                   run();
@@ -72,7 +72,7 @@ export default function Explorepageui() {
           </g>
         </svg>
       </div>
-      <Link onClick={()=>getAPIKeys()}>
+      <Link to="/ESports">
         <div className="explorebody">
           <img src="https://esportsworldcup.com/assets/Esports_World_Cup_Open_Graph_Thumbnail_36968128bd.png" alt="" className='exploreimage' />
           <div className="texts">

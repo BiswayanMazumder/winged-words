@@ -7,7 +7,7 @@ export default function Esportsui() {
         tweets.innerHTML = result
     }
     return (
-        <div className="posts" onLoad={getesportsdetails()}>
+        <div className="posts">
             <div className="logomobile">
                 <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" className="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-1nao33i r-rxcuwo r-1777fci r-m327ed r-494qqr">
                     <g>
