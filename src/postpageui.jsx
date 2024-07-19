@@ -86,6 +86,7 @@ export default function Postpageui() {
                    "Uploaded UID":user.uid,
                    
                   });
+                window.location.replace("/account");
             }).catch((error) => {
                 // console.error("Error updating document: ", error);
             });
