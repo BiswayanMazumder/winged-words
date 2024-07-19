@@ -823,15 +823,16 @@
 .tweetbody{
   position: relative;
   width: 100vw;
+  top: 10px;
   height: 85vh;
-  background-color: #343540;
+  background-color: black;
 }
 .tweetsinput {
   position: relative;
   /* overflow: scroll; */
   width: 50vw;
   height: 84vh;
-  background-color: #343540;
+  background-color: black;
   border: 0px 0px 1px solid;
   text-align: start;
   padding-left: 10px;
@@ -847,9 +848,69 @@
   }
 }
 
-.messagecenter{
+.messagecenter {
   height: 15vh;
-  width:110vw ;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 50vw;
   border-color: whitesmoke;
-  background-color: #333;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+}
+/* @media screen and (max-width:500px){
+  .tweetsinput{
+   height: 150px
+  }
+} */
+@media screen and (max-width: 1000px) and (min-width: 522px) {
+  .messagecenter {
+    width: 70vw;
+  }
+}
+@media screen and (max-width: 1100px) and (min-width: 1001px) {
+  .messagecenter {
+    width: 39vw;
+  }
+}
+
+@media screen and (max-width: 521px) {
+  .messagecenter {
+    width: 90vw;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .messagecenter {
+    width: 95vw;
+    gap: 5px;
+  }
+}
+
+.btns{
+  height: 50px;
+  width: auto;
+  margin-left: 20px;
+  background-color: black;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.post{
+  background-color: #1C97EA;
+  width: 100px;
+  margin-right: 20px;
+  border-radius:25px;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
