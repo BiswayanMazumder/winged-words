@@ -921,3 +921,15 @@
   align-items: center;
   text-align: center;
 }
+.player{
+  width: 50%;
+  position: relative;
+  text-decoration: none ;
+  color: white;
+  text-align: justify;
+  
+}
+.videoplayer{
+  border-radius: 10px;
+  border: 2px 2px 2px solid white;
+}

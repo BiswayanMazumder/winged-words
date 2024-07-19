@@ -1,9 +1,68 @@
+import { GoogleGenerativeAI } from '@google/generative-ai';
+import { initializeApp } from 'firebase/app';
+import { getAuth, GoogleAuthProvider } from 'firebase/auth';
+import { doc, getDoc, getFirestore } from 'firebase/firestore';
 import React, { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+const firebaseConfig = {
+  apiKey: "AIzaSyDZ_ktB0uBgEPdU1tfaUfxWJ3sTqgEMmvs",
+  authDomain: "wingedwordsadmin.firebaseapp.com",
+  databaseURL: "https://wingedwordsadmin-default-rtdb.firebaseio.com",
+  projectId: "wingedwordsadmin",
+  storageBucket: "wingedwordsadmin.appspot.com",
+  messagingSenderId: "386908666811",
+  appId: "1:386908666811:web:a979774edcac6706c1229e",
+  measurementId: "G-38QRTWBK7L"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth();
+const provider = new GoogleAuthProvider();
 export default function Explorepageui() {
   function getdocumentitle() {
     document.title = "Explore - WingedWords"
   }
+  const [apikey,setapikeys]=useState('');
+  const getAPIKeys = async () => {
+    const user=auth.currentUser;
+    if (user) {
+        const uid = user.uid;
+        const userDocRef = doc(db, "Gemini", "API_KEYS");
+        try {
+            const docSnap = await getDoc(userDocRef);
+            if (docSnap.exists()) {
+                 const followersData =await docSnap.data()["api"];
+                setapikeys(followersData);
+                // console.log('apikey', apikey);
+                // console.log('wings written',wings);
+                const genAI = new GoogleGenerativeAI(apikey);
+                async function run() {
+                    // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts
+                    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
+                  
+                    const prompt = "ESports 2024";
+                  
+                    const result = await model.generateContent(prompt);
+                    const response = await result.response;
+                    const text = response.text();
+                    // console.log(text);
+                    localStorage.setItem("Details",text);
+                    window.location.replace("/ESports")
+                  }
+                  
+                  run();
+            }
+            else {
+                // console.log('No such document!');
+
+            }
+        } catch (error) {
+            // console.error("Error fetching followers:", error);
+        }
+    }
+}
   return (
     <div className="posts" onLoad={getdocumentitle()}>
       <div className="logomobile">
@@ -13,7 +72,7 @@ export default function Explorepageui() {
           </g>
         </svg>
       </div>
-      <Link>
+      <Link onClick={()=>getAPIKeys()}>
         <div className="explorebody">
           <img src="https://esportsworldcup.com/assets/Esports_World_Cup_Open_Graph_Thumbnail_36968128bd.png" alt="" className='exploreimage' />
           <div className="texts">

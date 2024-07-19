@@ -19,6 +19,7 @@ import { SpeedInsights } from "@vercel/speed-insights/react"
 import ExploreUI from './Components/explore';
 import Aivachatscreen from './aivachatscreen';
 import Postingpage from './postingpage';
+import Esports from './esports';
 function App() {
   return (
     // https://www.adobe.com/express/learn/blog/media_19a6320255f0ee0bf15d2e9937607b9fa757a20cc.jpeg?width=1200&format=pjpg&optimize=medium
@@ -55,6 +56,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/Post' element={<Postingpage/>}/>
+      </Routes>
+      <Routes>
+        <Route path='/ESports' element={<Esports/>}/>
       </Routes>
       <Analytics />
       <SpeedInsights />
