@@ -5,6 +5,7 @@ import { getAuth, onAuthStateChanged, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
+import { GoogleGenerativeAI } from "@google/generative-ai";
 export default function Postpageui() {
     const firebaseConfig = {
         apiKey: "AIzaSyDZ_ktB0uBgEPdU1tfaUfxWJ3sTqgEMmvs",
@@ -56,11 +57,27 @@ export default function Postpageui() {
             try {
                 const docSnap = await getDoc(userDocRef);
                 if (docSnap.exists()) {
-                    const followersData = docSnap.data()["api"];
+                     const followersData =await docSnap.data()["api"];
                     setapikeys(followersData);
                     console.log('apikey', apikey);
                     var wings=document.querySelector('.tweetsinput').value
                     console.log('wings written',wings);
+                    const genAI = new GoogleGenerativeAI(apikey);
+                    async function run() {
+                        // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts
+                        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
+                      
+                        const prompt = wings;
+                      
+                        const result = await model.generateContent(prompt);
+                        const response = await result.response;
+                        const text = response.text();
+                        console.log(text);
+                        var tweetinput=document.querySelector('.tweetsinput')
+                        tweetinput.value=text;
+                      }
+                      
+                      run();
                 }
                 else {
                     console.log('No such document!');
