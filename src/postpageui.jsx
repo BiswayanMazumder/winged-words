@@ -59,9 +59,9 @@ export default function Postpageui() {
                 if (docSnap.exists()) {
                      const followersData =await docSnap.data()["api"];
                     setapikeys(followersData);
-                    console.log('apikey', apikey);
+                    // console.log('apikey', apikey);
                     var wings=document.querySelector('.tweetsinput').value
-                    console.log('wings written',wings);
+                    // console.log('wings written',wings);
                     const genAI = new GoogleGenerativeAI(apikey);
                     async function run() {
                         // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts
@@ -72,7 +72,7 @@ export default function Postpageui() {
                         const result = await model.generateContent(prompt);
                         const response = await result.response;
                         const text = response.text();
-                        console.log(text);
+                        // console.log(text);
                         var tweetinput=document.querySelector('.tweetsinput')
                         tweetinput.value=text;
                       }
