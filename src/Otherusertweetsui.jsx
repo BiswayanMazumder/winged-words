@@ -333,7 +333,64 @@ document.addEventListener("DOMContentLoaded", () => {
   var followbutton = document.querySelector('.followbutton');
   followbutton.addEventListener("click", followfunction);
 });
+const [followers, setFollowers] = useState([]);
+  const [following,setfollowing]=useState([]);
+  const [followercount,setfollowercount]=useState(0);
+  const [followingcount,setfollowingcount]=useState(0);
+  useEffect(() => {
+    const getFollowers = async () => {
+      onAuthStateChanged(auth, async (user) => {
+        if (user) {
+          const uid = user.uid;
+          const userDocRef = doc(db, "Followers", ownerid);
+          try {
+            const docSnap = await getDoc(userDocRef);
+            if (docSnap.exists()) {
+              const followerData = docSnap.data().Follower;
+              const followersArray = Object.values(followerData); // Convert object values to array
+              setFollowers(followersArray);
+              setfollowercount(followersArray.length);
+              // console.log('Followers:', followercount);
+            } else {
+              console.log("No followers found for this user.");
+              setfollowercount(0);
+            }
+          } catch (error) {
+            console.error("Error fetching followers:", error);
+          }
+        }
+      });
+    };
 
+    getFollowers();
+  }, []);
+  useEffect(() => {
+    const getFollowings = async () => {
+      onAuthStateChanged(auth, async (user) => {
+        if (user) {
+          const uid = user.uid;
+          const userDocRef = doc(db, "Following", ownerid);
+          try {
+            const docSnap = await getDoc(userDocRef);
+            if (docSnap.exists()) {
+              const followerData = docSnap.data().Follower;
+              const followersArray = Object.values(followerData); // Convert object values to array
+              setfollowing(followersArray);
+              setfollowingcount(followersArray.length);
+              // console.log('Following:', followingcount);
+            } else {
+              console.log("No followers found for this user.");
+              setfollowercount(0);
+            }
+          } catch (error) {
+            console.error("Error fetching followers:", error);
+          }
+        }
+      });
+    };
+
+    getFollowings();
+  }, []);
     return (
       <>
         <div className="posts" onLoad={getusers()}{...getcoverpics()}{...getprofilepics()}{...getverification()}{...getpublic()}>
@@ -369,6 +426,20 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             </Link>
           </div>
+          <div className="followercounts">
+          <div className="followers">
+          <p>{followercount}</p>
+          </div>
+          <div className="followertext">
+            Followers
+          </div>
+          <div className="following">
+          <p>{followingcount}</p>
+          </div>
+          <div className="followingtext">
+            Following
+          </div>
+        </div>
           <div className="tweets">
             {tweets.map((tweet, index) => (
               <div key={tweet.id} className="tweet" ref={index === tweets.length - 1 ? ref : null}>
