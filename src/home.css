@@ -932,3 +932,31 @@
 .videoplayer{
   border-radius: 10px;
 }
+.tweetsection{
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  width: 50vw;
+  position: relative;
+  gap: 20px;
+}
+.profileimg{
+  height: 40px;
+  width: 40px;
+  position: relative;
+  top: 5px;
+  border-radius: 50%;
+}
+.tweetinput{
+  margin-left: 20px;
+  width: 300px;
+  position: relative;
+  bottom: 10px;
+  font-weight: 500;
+  padding-left: 10px;
+  color: grey;
+  background-color: black;
+  box-shadow: black 1px 1px 1px;
+  border: 1px 1px 1px solid black;
+  height: 30px;
+}

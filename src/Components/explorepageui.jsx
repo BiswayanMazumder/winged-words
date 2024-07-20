@@ -25,44 +25,6 @@ export default function Explorepageui() {
     document.title = "Explore - WingedWords"
   }
   const [apikey,setapikeys]=useState('');
-  const getAPIKeys = async () => {
-    const user=auth.currentUser;
-    if (user) {
-        const uid = user.uid;
-        const userDocRef = doc(db, "Gemini", "API_KEYS");
-        try {
-            const docSnap = await getDoc(userDocRef);
-            if (docSnap.exists()) {
-                 const followersData =await docSnap.data()["api"];
-                setapikeys(followersData);
-                // console.log('apikey', apikey);
-                // console.log('wings written',wings);
-                const genAI = new GoogleGenerativeAI(apikey);
-                async function run() {
-                    // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts
-                    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
-                  
-                    const prompt = "ESports 2024";
-                  
-                    const result = await model.generateContent(prompt);
-                    const response = await result.response;
-                    const text = response.text();
-                    // console.log(text);
-                    localStorage.setItem("Details",text);
-                    // window.location.replace("/ESports")
-                  }
-                  
-                  run();
-            }
-            else {
-                // console.log('No such document!');
-
-            }
-        } catch (error) {
-            // console.error("Error fetching followers:", error);
-        }
-    }
-}
   return (
     <div className="posts" onLoad={getdocumentitle()}>
       <div className="logomobile">
