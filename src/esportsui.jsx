@@ -15,7 +15,7 @@ export default function Esportsui() {
                     </g>
                 </svg>
             </div>
-            <video  className='videoplayer' src="https://emkldzxxityxmjkxiggw.supabase.co/storage/v1/object/public/Netfly%20Storage/esports.mp4" autoPlay muted></video>
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/h2F3T3HNRbA" title="ESPORTS WORLD CUP | " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className='videoplayer'></iframe>
             <div className="tweets">
             </div>
         </div>
