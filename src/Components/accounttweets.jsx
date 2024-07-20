@@ -181,7 +181,7 @@ export default function AccountTweets() {
           setcoverpic(docSnap.data()["Cover Picture"])
           // console.log("Cover Picture: ", coverpic);
         }
-        else{
+        else {
           setcoverpic("https://images.pexels.com/photos/1029141/pexels-photo-1029141.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
         }
 
@@ -263,9 +263,9 @@ export default function AccountTweets() {
 
   }
   const [followers, setFollowers] = useState([]);
-  const [following,setfollowing]=useState([]);
-  const [followercount,setfollowercount]=useState(0);
-  const [followingcount,setfollowingcount]=useState(0);
+  const [following, setfollowing] = useState([]);
+  const [followercount, setfollowercount] = useState(0);
+  const [followingcount, setfollowingcount] = useState(0);
   useEffect(() => {
     const getFollowers = async () => {
       onAuthStateChanged(auth, async (user) => {
@@ -351,18 +351,26 @@ export default function AccountTweets() {
           </div>
         </div>
         <div className="followercounts">
-          <div className="followers">
-          <p>{followercount}</p>
+          <Link className='follower'>
+          <div className="follower">
+            <div className="followers">
+              <p>{followercount}</p>
+            </div>
+            <div className="followertext">
+              Followers
+            </div>
           </div>
-          <div className="followertext">
-            Followers
+          </Link>
+         <Link className='follower'>
+         <div className="follower">
+            <div className="following">
+              <p>{followingcount}</p>
+            </div>
+            <div className="followingtext">
+              Following
+            </div>
           </div>
-          <div className="following">
-          <p>{followingcount}</p>
-          </div>
-          <div className="followingtext">
-            Following
-          </div>
+         </Link>
         </div>
         <div className="tweets">
           {tweets.map((tweet, index) => (

@@ -974,6 +974,16 @@
   font-weight: 400;
   color: grey;
 }
+.follower{
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  gap: 5px;
+  color: white;
+}
+.follower:hover{
+  text-decoration: underline;
+}
 .following{
   color: white;
   display: flex;

@@ -427,18 +427,26 @@ const [followers, setFollowers] = useState([]);
             </Link> */}
           </div>
           <div className="followercounts">
-          <div className="followers">
-          <p>{followercount}</p>
+          <Link className='follower'>
+          <div className="follower">
+            <div className="followers">
+              <p>{followercount}</p>
+            </div>
+            <div className="followertext">
+              Followers
+            </div>
           </div>
-          <div className="followertext">
-            Followers
+          </Link>
+         <Link className='follower'>
+         <div className="follower">
+            <div className="following">
+              <p>{followingcount}</p>
+            </div>
+            <div className="followingtext">
+              Following
+            </div>
           </div>
-          <div className="following">
-          <p>{followingcount}</p>
-          </div>
-          <div className="followingtext">
-            Following
-          </div>
+         </Link>
         </div>
           <div className="tweets">
             {tweets.map((tweet, index) => (
