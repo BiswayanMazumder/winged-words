@@ -21,6 +21,7 @@ import Aivachatscreen from './aivachatscreen';
 import Postingpage from './postingpage';
 import Esports from './esports';
 import Alanwalker from './alanwalker';
+import Followerpage from './Components/followerpage';
 function App() {
   return (
     // https://www.adobe.com/express/learn/blog/media_19a6320255f0ee0bf15d2e9937607b9fa757a20cc.jpeg?width=1200&format=pjpg&optimize=medium
@@ -63,6 +64,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/Sunburn Arena Ft. Alan Walker - Kolkata' element={<Alanwalker/>}/>
+      </Routes>
+      <Routes>
+        <Route path='/followers' element={<Followerpage/>}/>
       </Routes>
       <Analytics />
       <SpeedInsights />

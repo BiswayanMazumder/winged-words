@@ -60,6 +60,7 @@ export default function AccountTweets() {
       if (userDetailsDocSnap.exists()) {
         setname(userDetailsDocSnap.data()["Name"])
         document.title = userDetailsDocSnap.data()["Name"]
+        localStorage.setItem('Username', userDetailsDocSnap.data()["Name"])
         return {
           id: userId,
           name: userDetailsDocSnap.data()["Name"],
@@ -279,7 +280,6 @@ export default function AccountTweets() {
               const followersArray = Object.values(followerData); // Convert object values to array
               setFollowers(followersArray);
               setfollowercount(followersArray.length);
-              // console.log('Followers:', followercount);
             } else {
               console.log("No followers found for this user.");
               setfollowercount(0);
@@ -351,7 +351,7 @@ export default function AccountTweets() {
           </div>
         </div>
         <div className="followercounts">
-          <Link className='follower'>
+          <Link className='follower' to={'/followers'}>
           <div className="follower">
             <div className="followers">
               <p>{followercount}</p>

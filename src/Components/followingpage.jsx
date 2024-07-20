@@ -12,6 +12,7 @@ import {
     Route
 } from 'react-router-dom';
 import FollowingpageUI from '../followingpageUI';
+import Homepagethirdsection from './homepagethirdsection';
 export default function Followingpage() {
     useEffect(() => {
         document.title = "Following - WingedWords";
@@ -22,6 +23,7 @@ export default function Followingpage() {
             <div className="homebody">
                 <Navbar />
                 <FollowingpageUI />
+                <Homepagethirdsection/>
             </div>
         </>
     )
