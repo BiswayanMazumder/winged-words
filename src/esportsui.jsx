@@ -15,7 +15,7 @@ export default function Esportsui() {
                     </g>
                 </svg>
             </div>
-            <iframe width="640" height="360new video" src="https://www.youtube.com/embed/8B8MUFLA3p8" title="[Hindi] PMIS Grand Finals - Day 1 | PUBG MOBILE India Series 2020 #PMIS2020 #PUBGMOBILE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className='videoplayer'></iframe>
+            <iframe width="640" height="360" src="https://www.youtube.com/watch?v=8B8MUFLA3p8" title="ESPORTS WORLD CUP | " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className='videoplayer'></iframe>
             <div className="tweets">
             </div>
         </div>
