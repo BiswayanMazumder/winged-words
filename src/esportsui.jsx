@@ -68,14 +68,6 @@ export default function Esportsui() {
                 Watch the Esports World Cup 2024 from July 3rd through August 25th!
                 </h5>
                 <br />
-                <div className="tweetsection">
-                    <div className="pfp">
-                        <img src={pfp} alt="error" className='profileimg'/>
-                        <Link to={"/Post"}>
-                        <input type="text" className='tweetinput' placeholder='Type About #ESports 2024'/>
-                        </Link>
-                    </div>
-                </div>
             </div>
         </div>
 
