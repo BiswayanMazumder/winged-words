@@ -420,11 +420,11 @@ const [followers, setFollowers] = useState([]);
             <p>{name}</p>
             <div className="verified">
             </div>
-            <Link className='follow' onClick={followfunction}>
+            {/* <Link className='follow' onClick={followfunction}>
             <div className="followbutton">
             Following
             </div>
-            </Link>
+            </Link> */}
           </div>
           <div className="followercounts">
           <div className="followers">
