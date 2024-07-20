@@ -262,6 +262,64 @@ export default function AccountTweets() {
     })
 
   }
+  const [followers, setFollowers] = useState([]);
+  const [following,setfollowing]=useState([]);
+  const [followercount,setfollowercount]=useState(0);
+  const [followingcount,setfollowingcount]=useState(0);
+  useEffect(() => {
+    const getFollowers = async () => {
+      onAuthStateChanged(auth, async (user) => {
+        if (user) {
+          const uid = user.uid;
+          const userDocRef = doc(db, "Followers", uid);
+          try {
+            const docSnap = await getDoc(userDocRef);
+            if (docSnap.exists()) {
+              const followerData = docSnap.data().Follower;
+              const followersArray = Object.values(followerData); // Convert object values to array
+              setFollowers(followersArray);
+              setfollowercount(followersArray.length);
+              // console.log('Followers:', followercount);
+            } else {
+              console.log("No followers found for this user.");
+              setfollowercount(0);
+            }
+          } catch (error) {
+            console.error("Error fetching followers:", error);
+          }
+        }
+      });
+    };
+
+    getFollowers();
+  }, []);
+  useEffect(() => {
+    const getFollowings = async () => {
+      onAuthStateChanged(auth, async (user) => {
+        if (user) {
+          const uid = user.uid;
+          const userDocRef = doc(db, "Following", uid);
+          try {
+            const docSnap = await getDoc(userDocRef);
+            if (docSnap.exists()) {
+              const followerData = docSnap.data().Follower;
+              const followersArray = Object.values(followerData); // Convert object values to array
+              setfollowing(followersArray);
+              setfollowingcount(followersArray.length);
+              // console.log('Following:', followingcount);
+            } else {
+              console.log("No followers found for this user.");
+              setfollowercount(0);
+            }
+          } catch (error) {
+            console.error("Error fetching followers:", error);
+          }
+        }
+      });
+    };
+
+    getFollowings();
+  }, []);
   return (
     <>
       <div className="posts" onLoad={getusers()}{...getcoverpics()}{...getprofilepics()}{...getverification()}>
@@ -290,6 +348,20 @@ export default function AccountTweets() {
         <div className="username">
           <p>{name}</p>
           <div className="verified">
+          </div>
+        </div>
+        <div className="followercounts">
+          <div className="followers">
+          <p>{followercount}</p>
+          </div>
+          <div className="followertext">
+            Followers
+          </div>
+          <div className="following">
+          <p>{followingcount}</p>
+          </div>
+          <div className="followingtext">
+            Following
           </div>
         </div>
         <div className="tweets">

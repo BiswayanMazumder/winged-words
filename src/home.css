@@ -960,3 +960,33 @@
   border: 1px 1px 1px solid black;
   height: 30px;
 }
+.followercounts{
+  color: white;
+  display: flex;
+  position: relative;
+  top: 50px;
+  left: 10px;
+  font-weight: bolder;
+  flex-direction: row;
+  gap: 5px;
+}
+.followertext{
+  font-weight: 400;
+  color: grey;
+}
+.following{
+  color: white;
+  display: flex;
+  position: relative;
+  left: 20px;
+  right: 10px;
+  font-weight: bolder;
+  flex-direction: row;
+  gap: 5px;
+}
+.followingtext{
+  font-weight: 400;
+  color: grey;
+  position: relative;
+  left: 20px;
+}
