@@ -20,6 +20,7 @@ import ExploreUI from './Components/explore';
 import Aivachatscreen from './aivachatscreen';
 import Postingpage from './postingpage';
 import Esports from './esports';
+import Alanwalker from './alanwalker';
 function App() {
   return (
     // https://www.adobe.com/express/learn/blog/media_19a6320255f0ee0bf15d2e9937607b9fa757a20cc.jpeg?width=1200&format=pjpg&optimize=medium
@@ -59,6 +60,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/ESports' element={<Esports/>}/>
+      </Routes>
+      <Routes>
+        <Route path='/Sunburn Arena Ft. Alan Walker - Kolkata' element={<Alanwalker/>}/>
       </Routes>
       <Analytics />
       <SpeedInsights />

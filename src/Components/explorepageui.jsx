@@ -42,7 +42,7 @@ export default function Explorepageui() {
           </div>
         </div>
       </Link>
-      <Link>
+      <Link to={"/Sunburn Arena Ft. Alan Walker - Kolkata"}>
         <div className="explorebody">
           <img src="https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-sunburn-arena-ft-alan-walker-kolkata-0-2024-7-15-t-9-30-52.jpg" alt="" className='exploreimage' />
           <div className="texts">

@@ -59,7 +59,7 @@ export default function Esportsui() {
                     </g>
                 </svg>
             </div>
-            <video className='videoplayer' src="https://emkldzxxityxmjkxiggw.supabase.co/storage/v1/object/public/Netfly%20Storage/esports.mp4" autoPlay muted></video>
+            <video className='videoplayer' src="https://emkldzxxityxmjkxiggw.supabase.co/storage/v1/object/public/Netfly%20Storage/esports.mp4" autoPlay muted loop controls></video>
             <div className="tweets">
                 <h1>Esports World Cup 2024
                 </h1>
