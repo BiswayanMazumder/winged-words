@@ -546,8 +546,11 @@
   display: flex;
   top:-35px;
   flex-direction: row;
-  font-weight: 700;
+  font-weight: 500;
   gap: 10px;
+}
+.ownername:hover{
+  text-decoration: underline;
 }
 .profileimage{
   height: 40px;
@@ -663,11 +666,12 @@
 }
 .postscount{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   position: relative;
   font-weight: 300;
   font-size: 15px;
   top: 40px;
+  color: white;
   align-items: start;
   justify-content: start;
   text-align: start;
@@ -999,4 +1003,15 @@
   color: grey;
   position: relative;
   left: 20px;
+}
+.followersdetails{
+  position: absolute;
+  top:80px;
+  left: 30px;
+}
+.names{
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
 }
