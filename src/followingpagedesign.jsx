@@ -141,7 +141,10 @@ export default function Followingpagedesign() {
                   <img src={pfp[index]} alt="" className='profileimage' />
                   <div className="ownername">
                     <Link className='names' onClick={
-                        console.log('hii')
+                        ()=>{
+                          localStorage.setItem('userid',followers[index])
+                          window.location.href = "/other";
+                        }
                     }>
                       <p>{followername[index]}</p>
                     </Link>
