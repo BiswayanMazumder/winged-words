@@ -271,7 +271,7 @@ export default function AccountTweets() {
   useEffect(() => {
     const getFollowers = async () => {
       onAuthStateChanged(auth, async (user) => {
-        if (user) {  
+        if (user) {
           const uid = user.uid;
           const userDocRef = doc(db, "Followers", uid);
           try {
@@ -354,25 +354,25 @@ export default function AccountTweets() {
         </div>
         <div className="followercounts">
           <Link className='follower' to={'/followers'}>
-          <div className="follower">
-            <div className="followers">
-              <p>{followercount}</p>
+            <div className="follower">
+              <div className="followers">
+                <p>{followercount}</p>
+              </div>
+              <div className="followertext">
+                Followers
+              </div>
             </div>
-            <div className="followertext">
-              Followers
-            </div>
-          </div>
           </Link>
-         <Link className='follower'>
-         <div className="follower">
-            <div className="following">
-              <p>{followingcount}</p>
+          <Link className='follower' to={'/following'}>
+            <div className="follower">
+              <div className="following">
+                <p>{followingcount}</p>
+              </div>
+              <div className="followingtext">
+                Following
+              </div>
             </div>
-            <div className="followingtext">
-              Following
-            </div>
-          </div>
-         </Link>
+          </Link>
         </div>
         <div className="tweets">
           {tweets.map((tweet, index) => (
