@@ -270,7 +270,7 @@ export default function AccountTweets() {
   useEffect(() => {
     const getFollowers = async () => {
       onAuthStateChanged(auth, async (user) => {
-        if (user) { 
+        if (user) {  
           const uid = user.uid;
           const userDocRef = doc(db, "Followers", uid);
           try {
