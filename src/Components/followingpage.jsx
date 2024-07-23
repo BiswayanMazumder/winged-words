@@ -23,7 +23,7 @@ export default function Followingpage() {
             <div className="homebody">
                 <Navbar />
                 <FollowingpageUI />
-                <Homepagethirdsection/>
+                {/* <Homepagethirdsection/> */}
             </div>
         </>
     )

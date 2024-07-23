@@ -22,7 +22,7 @@ import Postingpage from './postingpage';
 import Esports from './esports';
 import Alanwalker from './alanwalker';
 import Followerpage from './Components/followerpage';
-import Followingpages from './Components/following';
+import Followingpagedesign from './followingpagedesign';
 import Following from './Components/following';
 function App() {
   return (
@@ -39,6 +39,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/home' element={<Home/>}/>
+      </Routes>
+      <Routes>
+        <Route path='/following' element={<Followingpage/>}/>
       </Routes>
       <Routes>
         <Route path='/account' element={<Account/>}/>
@@ -68,7 +71,7 @@ function App() {
         <Route path='/followers' element={<Followerpage/>}/>
       </Routes>
       <Routes>
-        <Route path='/following' element={<Following/>}/>
+        <Route path='/followinguser' element={<Following/>}/>
       </Routes>
       <Analytics />
       <SpeedInsights />

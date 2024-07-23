@@ -363,7 +363,7 @@ export default function AccountTweets() {
               </div>
             </div>
           </Link>
-          <Link className='follower' to={'/following'}>
+          <Link className='follower' to={'/followinguser'}>
             <div className="follower">
               <div className="following">
                 <p>{followingcount}</p>
