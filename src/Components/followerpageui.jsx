@@ -45,10 +45,10 @@ export default function Followerpageui() {
           const followerData = docSnap.data().Follower;
           const followersArray = Object.values(followerData).map(f => f.ID); // Extract ID values
           setFollowers(followersArray);
-          console.log('followers', followersArray);
+          // console.log('followers', followersArray);
           return followersArray;
         } else {
-          console.log("No followers found for this user.");
+          // console.log("No followers found for this user.");
           return [];
         }
       } catch (error) {
@@ -70,16 +70,16 @@ export default function Followerpageui() {
             followerNames.push(followerData["Name"]);
             profilePictures.push(followerData["Profile Pic"]);
           } else {
-            console.log("No such document!");
+            // console.log("No such document!");
           }
         } catch (error) {
-          console.error("Error fetching follower data:", error);
+          // console.error("Error fetching follower data:", error);
         }
       }
       setfollowername(followerNames);
       setpfp(profilePictures);
-      console.log('follower names', followerNames);
-      console.log('profile pictures', profilePictures);
+      // console.log('follower names', followerNames);
+      // console.log('profile pictures', profilePictures);
       for (let i = 0; i < followersArray.length; i++) {
         const followerDocRef = doc(db, "Verifications", followersArray[i]);
         try {
@@ -92,11 +92,11 @@ export default function Followerpageui() {
             // console.log("No such document!");
           }
         } catch (error) {
-          console.error("Error fetching follower data:", error);
+          // console.error("Error fetching follower data:", error);
         }
       }
       setverification(Verifications);
-      console.log('verifications', Verifications);
+      // console.log('verifications', Verifications);
     };
 
     const getFollowers = async () => {
